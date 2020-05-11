@@ -1,20 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "assets/scss/material-kit-react.scss?v=1.8.0";
+import Home from "./pages/Home";
 
-// pages for this product
-import LandingPage from "views/LandingPage/LandingPage.js";
-
-var hist = createBrowserHistory();
+const root = document.getElementById("root")
 
 ReactDOM.render(
-  <Router history={hist}>
+  <BrowserRouter>
     <Switch>
-      <Route path="/" component={LandingPage} />
+      <Route path="/">
+          <Home/>
+      </Route>
     </Switch>
-  </Router>,
-  document.getElementById("root")
+  </BrowserRouter>,
+  root
 );
