@@ -7,10 +7,6 @@ module.exports = {
     parserOptions: {
         project: './tsconfig.json',
     },
-    rules: {
-        "import/prefer-default-export": "off",
-        "import/no-cycle": "off",
-    },
     plugins: ['@typescript-eslint'],
     settings: {
         'import/resolver': {
