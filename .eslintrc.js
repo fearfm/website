@@ -9,16 +9,6 @@ module.exports = {
     },
     plugins: ['@typescript-eslint'],
     settings: {
-        'import/resolver': {
-            alias: {
-                map: [
-                    ['@contexts', './src/contexts'],
-                    ['@organisms', './src/organisms'],
-                    ['@pages', './src/pages'],
-                ],
-                extensions: ['.ts', '.js', '.jsx', '.json']
-            }
-        },
         "react": {
             "version": "detect",
         }
