@@ -2,10 +2,11 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Fear.FM website",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,7 +28,13 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/socket.io-client": "^1.4.32",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
     "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.20.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "source-map-loader": "^0.2.4",

@@ -1,4 +1,4 @@
-export interface ITrackInfo {
-  artist?: string,
-  title: string,
+export interface TrackInfo {
+  artist?: string;
+  title: string;
 }

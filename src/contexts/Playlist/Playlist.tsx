@@ -1,25 +1,29 @@
 import * as React from 'react';
 import * as openSocket from 'socket.io-client';
-import {ITrackInfo} from "./Types";
+import { TrackInfo } from './Types';
 
-export const PlaylistContext =  React.createContext<ITrackInfo[]>([]);
+export const PlaylistContext = React.createContext<TrackInfo[]>([]);
 
-export const PlaylistProvider: React.FC = ({ children}) => {
-    const [playlist, setPlaylist] = React.useState<ITrackInfo[]>([])
+interface Props {
+  children: React.ReactNode;
+}
 
-    React.useEffect(() => {
-        const socket = openSocket('https://nowplaying.fear.fm/');
-        socket.on('update', (data: ITrackInfo[]) => {
-            setPlaylist(data);
-        });
-        return () => {
-            socket.disconnect();
-        }
-    }, []);
+export const PlaylistProvider: React.FC<Props> = ({ children }: Props) => {
+  const [playlist, setPlaylist] = React.useState<TrackInfo[]>([]);
 
-    return (
+  React.useEffect(() => {
+    const socket = openSocket('https://nowplaying.fear.fm/');
+    socket.on('update', (data: TrackInfo[]) => {
+      setPlaylist(data);
+    });
+    return (): void => {
+      socket.disconnect();
+    };
+  }, []);
+
+  return (
         <PlaylistContext.Provider value={ playlist }>
             { children }
         </PlaylistContext.Provider>
-    );
-}
+  );
+};

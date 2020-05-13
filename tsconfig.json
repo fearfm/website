@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "@contexts/*": [
+        "src/contexts/*"
+      ],
+      "@organisms/*": [
+        "src/organisms/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ]
+    }
   },
   "include": [
     "./src/**/**/*"
