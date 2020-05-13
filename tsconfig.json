@@ -6,18 +6,7 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
-    "jsx": "react",
-    "paths": {
-      "@contexts/*": [
-        "src/contexts/*"
-      ],
-      "@organisms/*": [
-        "src/organisms/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ]
-    }
+    "jsx": "react"
   },
   "include": [
     "./src/**/**/*"

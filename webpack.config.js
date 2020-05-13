@@ -6,6 +6,11 @@ module.exports = {
     devtool: "source-map",
     entry: './src/index.tsx',
     resolve: {
+        alias: {
+          '@contexts': path.resolve(__dirname, 'src/contexts'),
+          '@organisms': path.resolve(__dirname, 'src/organisms'),
+          '@pages': path.resolve(__dirname, 'src/pages'),
+        },
         extensions: [".ts", ".tsx", ".js"]
     },
     module: {
