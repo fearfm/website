@@ -17,31 +17,23 @@ const MenuLink = styled(NavLink)`
     color: #fff;
   }
   
-  @keyframes border {
-    from {
-      background-color: rgba(255, 255, 255, 0.4);
-      width: 0;
-      left: 50%;
-    }
-    to {
-      background-color: #fff;
-      width: 100%;
-      left: 0;
-    }
+  &:after {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 0;
+    left: 50%;
+    transition: all 400ms;
   }
   
   &.active:after {
     content: '';
     position: absolute;
     bottom: -0.2rem;
-    left: 50%;
     height: 2px;
-    width: 0;
-    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 2px;
-    animation-name: border;
-    animation-duration: 400ms;
-    animation-fill-mode: forwards;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
   }
 `
 
