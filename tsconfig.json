@@ -16,6 +16,9 @@
       ],
       "@pages/*": [
         "src/pages/*"
+      ],
+      "@templates/*": [
+        "src/templates/*"
       ]
     }
   },

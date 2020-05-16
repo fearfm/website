@@ -10,6 +10,7 @@ module.exports = {
           '@contexts': path.resolve(__dirname, 'src/contexts'),
           '@organisms': path.resolve(__dirname, 'src/organisms'),
           '@pages': path.resolve(__dirname, 'src/pages'),
+          '@templates': path.resolve(__dirname, 'src/templates'),
         },
         extensions: [".ts", ".tsx", ".js"]
     },
@@ -35,5 +36,9 @@ module.exports = {
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
         new HotModuleReplacementPlugin(),
     ],
+    devServer: {
+        publicPath: '/',
+        historyApiFallback: true,
+    }
 };
 
