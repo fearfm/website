@@ -14,7 +14,7 @@
     "url": "git+https://github.com/fear-fm/website.git"
   },
   "author": "Fear.FM",
-  "license": "ISC",
+  "license": "agpl-3.0",
   "bugs": {
     "url": "https://github.com/fear-fm/website/issues"
   },
