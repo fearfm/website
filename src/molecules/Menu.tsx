@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Grid } from '@material-ui/core';
-import { MenuLink, Size } from "@atoms/MenuLink";
+import { MenuLink, Size } from "@molecules/MenuLink";
 
 export interface Props {
   items: Array<{
