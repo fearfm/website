@@ -8,7 +8,9 @@ module.exports = {
     resolve: {
         alias: {
           '@assets': path.resolve(__dirname, 'src/assets'),
+          '@atoms': path.resolve(__dirname, 'src/atoms'),
           '@contexts': path.resolve(__dirname, 'src/contexts'),
+          '@molecules': path.resolve(__dirname, 'src/molecules'),
           '@organisms': path.resolve(__dirname, 'src/organisms'),
           '@pages': path.resolve(__dirname, 'src/pages'),
           '@templates': path.resolve(__dirname, 'src/templates'),

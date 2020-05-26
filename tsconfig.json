@@ -11,8 +11,14 @@
       "@assets/*": [
         "src/assets/*"
       ],
+      "@atoms/*": [
+        "src/atoms/*"
+      ],
       "@contexts/*": [
         "src/contexts/*"
+      ],
+      "@molecules/*": [
+        "src/molecules/*"
       ],
       "@organisms/*": [
         "src/organisms/*"

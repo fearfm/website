@@ -8,6 +8,7 @@ import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
+import { BottomMenu } from '@organisms/BottomMenu';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
 
@@ -84,10 +85,10 @@ ReactDOM.render(
               </Switch>
             </Content>
             <Footer xs={12} item container alignItems="center">
-              <Grid xs={ 6 } item container>
-                Contact
+              <Grid xs={ 3 } item container>
+                <BottomMenu />
               </Grid>
-              <Grid xs={ 6 } item container justify="flex-end">
+              <Grid xs={ 9 } item container justify="flex-end">
                 Powered by
               </Grid>
             </Footer>
