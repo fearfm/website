@@ -29,7 +29,7 @@ const Container = styled(Grid)`
   padding: 0 3rem;
   background-color: #000918;
   background-image: url("data:image/svg+xml;base64,${btoa(DotsSvg)}");
-  background-position: center -2rem;
+  background-position: center bottom 2rem;
   background-size: auto 100%;
   background-repeat: no-repeat;
   color: #fff;
