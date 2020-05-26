@@ -11,6 +11,7 @@ import { TopMenu } from '@organisms/TopMenu';
 import { BottomMenu } from '@organisms/BottomMenu';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
+import { Font } from "@atoms/Font";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -85,8 +86,9 @@ ReactDOM.render(
               </Switch>
             </Content>
             <Footer xs={12} item container alignItems="center">
-              <Grid xs={ 3 } item container>
-                <BottomMenu />
+              <Grid xs={ 3 } item container direction="column">
+                <Grid item><BottomMenu /></Grid>
+                <Grid item><Font uppercase transparent bold>&copy; { (new Date()).getFullYear() } Fear.FM</Font></Grid>
               </Grid>
               <Grid xs={ 9 } item container justify="flex-end">
                 Powered by

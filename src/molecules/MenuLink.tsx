@@ -10,7 +10,7 @@ export interface Props {
   exact?: boolean;
 }
 
-const Link = styled.a<{ active?: boolean }>`
+const Link = styled.a<{ active?: boolean; size?: Size }>`
   position: relative;
   cursor: pointer;
   transition: color 300ms;
@@ -32,8 +32,8 @@ const Link = styled.a<{ active?: boolean }>`
     &:after {
         content: '';
         position: absolute;
-        bottom: -0.2rem;
-        height: 2px;
+        bottom: ${ props.size === Size.large ? '-0.2rem' : '-0.05rem' };
+        height: ${ props.size === Size.large ? '2px' : '1px' };
         border-radius: 2px;
         background-color: #fff;
         width: 100%;
@@ -55,7 +55,7 @@ export const MenuLink: React.FC<Props> = ({ size, children, to, exact }: Props) 
   }
   const active = exact ? location.pathname === to : location.pathname.startsWith(to);
   return (
-      <Link href={ to } active={ active } onClick={ navigate }>
+      <Link href={ to } size={ size } active={ active } onClick={ navigate }>
         <Font uppercase bold size={ size } transparent={ !active }>{ children }</Font>
       </Link>
   )
