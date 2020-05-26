@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { NowPlaying } from '@organisms/NowPlaying';
 
-export const Home: React.FC = () => (
+export const Residents: React.FC = () => (
     <>
-        <h1>Home</h1>
+        <h1>Residents</h1>
         <NowPlaying />
     </>
 );

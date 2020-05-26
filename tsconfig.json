@@ -8,14 +8,26 @@
     "target": "es6",
     "jsx": "react",
     "paths": {
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@atoms/*": [
+        "src/atoms/*"
+      ],
       "@contexts/*": [
         "src/contexts/*"
+      ],
+      "@molecules/*": [
+        "src/molecules/*"
       ],
       "@organisms/*": [
         "src/organisms/*"
       ],
       "@pages/*": [
         "src/pages/*"
+      ],
+      "@templates/*": [
+        "src/templates/*"
       ]
     }
   },
