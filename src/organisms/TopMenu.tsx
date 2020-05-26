@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const MenuLink = styled(NavLink)`
   position: relative;
   color: rgba(255, 255, 255, 0.4);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;

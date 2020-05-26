@@ -1,14 +1,27 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import {CssBaseline, Grid} from '@material-ui/core';
+import { CssBaseline, Grid } from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  }
+  
+  body {
+    font-family: "system";
+  }
+`
 
 const Container = styled(Grid)`
   height: 100vh;
@@ -32,6 +45,7 @@ const Footer = styled(Grid)`
 ReactDOM.render(
     <>
       <CssBaseline />
+      <GlobalStyle />
       <PlaylistProvider>
         <BrowserRouter>
           <Container container>
