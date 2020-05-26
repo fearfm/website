@@ -8,6 +8,9 @@
     "target": "es6",
     "jsx": "react",
     "paths": {
+      "@assets/*": [
+        "src/assets/*"
+      ],
       "@contexts/*": [
         "src/contexts/*"
       ],

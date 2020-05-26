@@ -9,6 +9,7 @@ import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
 import styled, { createGlobalStyle } from "styled-components";
+import DotsSvg from '@assets/dots.svg';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -26,8 +27,14 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled(Grid)`
   height: 100vh;
   padding: 0 3rem;
-  background-color: #841f1f;
+  background-color: #000918;
+  background-image: url("data:image/svg+xml;base64,${btoa(DotsSvg)}");
+  background-position: center -2rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  color: #fff;
 `
+
 
 const Header = styled(Grid)`
   height: 4rem;

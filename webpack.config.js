@@ -7,12 +7,13 @@ module.exports = {
     entry: './src/index.tsx',
     resolve: {
         alias: {
+          '@assets': path.resolve(__dirname, 'src/assets'),
           '@contexts': path.resolve(__dirname, 'src/contexts'),
           '@organisms': path.resolve(__dirname, 'src/organisms'),
           '@pages': path.resolve(__dirname, 'src/pages'),
           '@templates': path.resolve(__dirname, 'src/templates'),
         },
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js", ".svg"]
     },
     module: {
         rules: [
@@ -29,7 +30,11 @@ module.exports = {
                 enforce: "pre",
                 test: /\.js$/,
                 loader: "source-map-loader"
-            }
+            },
+            {
+                test: /\.svg$/i,
+                use: 'raw-loader',
+            },
         ]
     },
     plugins: [
