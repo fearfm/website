@@ -13,11 +13,11 @@ export const BottomMenu: React.FC = () => {
         },
         {
           label: "Privacy policy",
-          to: "privacy",
+          to: "/privacy",
         },
         {
           label: "FAQ",
-          to: "faq",
+          to: "/faq",
         },
     ]
     return <Menu items={ items } size={ Size.small } />

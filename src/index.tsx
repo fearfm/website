@@ -6,6 +6,7 @@ import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
+import { Privacy } from '@pages/Privacy';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
 import { BottomMenu } from '@organisms/BottomMenu';
@@ -81,6 +82,9 @@ ReactDOM.render(
                 </Route>
                 <Route exact path="/schedule">
                   <Schedule/>
+                </Route>
+                <Route exact path="/privacy">
+                  <Privacy/>
                 </Route>
               </Switch>
             </Content>
