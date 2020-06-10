@@ -15,7 +15,7 @@ module.exports = {
           '@pages': path.resolve(__dirname, 'src/pages'),
           '@templates': path.resolve(__dirname, 'src/templates'),
         },
-        extensions: [".ts", ".tsx", ".js", ".svg"]
+        extensions: [".ts", ".tsx", ".js", ".svg", ".png", ".jpe?g"]
     },
     module: {
         rules: [
@@ -34,8 +34,12 @@ module.exports = {
                 loader: "source-map-loader"
             },
             {
-                test: /\.svg$/i,
-                use: 'raw-loader',
+                test: /\.(svg|png|jpe?g|gif|xml|webmanifest)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
             },
         ]
     },
