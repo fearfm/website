@@ -9,9 +9,11 @@ import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
 import { BottomMenu } from '@organisms/BottomMenu';
+import { Font } from "@atoms/Font";
+import { Privacy } from '@pages/Privacy';
+import { DocumentHead } from '@organisms/DocumentHead';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
-import { Font } from "@atoms/Font";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -30,7 +32,7 @@ const Container = styled(Grid)`
   height: 100vh;
   padding: 0 3rem;
   background-color: #000918;
-  background-image: url("data:image/svg+xml;base64,${btoa(DotsSvg)}");
+  background-image: url("${DotsSvg}");
   background-position: center bottom 2rem;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -53,12 +55,13 @@ const Footer = styled(Grid)`
 
 ReactDOM.render(
     <>
+      <DocumentHead />
       <CssBaseline />
       <GlobalStyle />
       <PlaylistProvider>
         <BrowserRouter>
           <Container container>
-            <Header xs={12} item container alignItems="center">
+            <Header xs={ 12 } item container alignItems="center">
               <Grid xs={ 4 } item container>
                 Fear.FM
               </Grid>
@@ -69,7 +72,7 @@ ReactDOM.render(
                 Social
               </Grid>
             </Header>
-            <Content xs={12} item>
+            <Content xs={ 12 } item>
               <Switch>
                 <Route exact path="/">
                   <Home/>
@@ -89,6 +92,9 @@ ReactDOM.render(
               <Grid xs={ 3 } item container direction="column">
                 <Grid item><BottomMenu /></Grid>
                 <Grid item><Font uppercase transparent bold>&copy; { (new Date()).getFullYear() } Fear.FM</Font></Grid>
+                <Route exact path="/privacy">
+                  <Privacy/>
+                </Route>
               </Grid>
               <Grid xs={ 9 } item container justify="flex-end">
                 Powered by
