@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Logo } from '@atoms/Logo';
 import { TopMenu } from "@organisms/TopMenu";
 import { ScreenContext, Screen } from "@contexts/Screen";
+import { Socials } from "@molecules/Socials";
 
 const MyAppBar = styled(AppBar)`
   background-color: #000918;
@@ -51,7 +52,7 @@ export const Header: React.FC = () => {
             <TopMenu/>
           </Middle>
           <Right screen={ screen }>
-            <div>socials</div>
+            <Socials/>
           </Right>
         </MyToolbar>
       </MyAppBar>

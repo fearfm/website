@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { CssBaseline, Grid } from '@material-ui/core';
+import { CssBaseline, Grid, Icon } from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
@@ -14,6 +14,10 @@ import { Header } from '@organisms/Header';
 import { Footer } from '@organisms/Footer';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
+import IcomoonEot from '@assets/fonts/icomoon.eot';
+import IcomoonSvg from '@assets/fonts/icomoon.svg';
+import IcomoonTtf from '@assets/fonts/icomoon.ttf';
+import IcomoonWoff from '@assets/fonts/icomoon.woff';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -23,9 +27,22 @@ const GlobalStyle = createGlobalStyle`
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
   }
   
+  @font-face {
+    font-family: 'icomoon';
+    src: url('${IcomoonEot}?wuqlhg');
+    src: url('${IcomoonEot}?wuqlhg#iefix') format('embedded-opentype'),
+      url('${IcomoonTtf}?wuqlhg') format('truetype'),
+      url('${IcomoonWoff}?wuqlhg') format('woff'),
+      url('${ IcomoonSvg }') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
   body {
     font-family: "system";
   }
+
 `
 
 const Container = styled.div`
