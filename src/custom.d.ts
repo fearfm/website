@@ -1,6 +1,8 @@
 declare module "*.svg" {
-  const value: string;
-  export default value;
+  import {AnyStyledComponent} from "styled-components";
+    const value: string;
+  export const ReactComponent: React.Component<React.SVGAttributes<SVGElement>> & AnyStyledComponent
+  export default value
 }
 
 declare module "*.png" {

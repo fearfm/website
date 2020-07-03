@@ -10,6 +10,7 @@ import { PlaylistProvider } from '@contexts/Playlist/Playlist';
 import { TopMenu } from '@organisms/TopMenu';
 import { BottomMenu } from '@organisms/BottomMenu';
 import { Font } from "@atoms/Font";
+import { Logo } from "@atoms/Logo";
 import { Privacy } from '@pages/Privacy';
 import { DocumentHead } from '@organisms/DocumentHead';
 import styled, { createGlobalStyle } from "styled-components";
@@ -30,9 +31,9 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled(Grid)`
   height: 100vh;
-  padding: 0 3rem;
+  padding: 2rem 3rem 0;
+  background-image: url("${ DotsSvg }");
   background-color: #000918;
-  background-image: url("${DotsSvg}");
   background-position: center bottom 2rem;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -48,7 +49,6 @@ const Content = styled(Grid)`
   height: calc(100% - 8rem);
 `
 
-
 const Footer = styled(Grid)`
   height: 4rem;
 `
@@ -61,9 +61,9 @@ ReactDOM.render(
       <PlaylistProvider>
         <BrowserRouter>
           <Container container>
-            <Header xs={ 12 } item container alignItems="center">
+            <Header xs={ 12 } item container alignItems="center" spacing={ 2 }>
               <Grid xs={ 4 } item container>
-                Fear.FM
+                <Logo />
               </Grid>
               <Grid xs={ 4 } item container>
                 <TopMenu />
