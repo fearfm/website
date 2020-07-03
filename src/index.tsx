@@ -7,6 +7,7 @@ import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
+import { ScreenProvider } from '@contexts/Screen/Screen';
 import { Privacy } from '@pages/Privacy';
 import { DocumentHead } from '@organisms/DocumentHead';
 import { Header } from '@organisms/Header';
@@ -60,34 +61,36 @@ ReactDOM.render(
       <DocumentHead />
       <CssBaseline />
       <GlobalStyle />
-      <PlaylistProvider>
-        <BrowserRouter>
-          <Container>
-            <BackgroundImage/>
-            <Header />
-            <Content item xs={ 12 }>
-              <Switch>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
-                <Route exact path="/playlists">
-                  <Playlists/>
-                </Route>
-                <Route exact path="/residents">
-                  <Residents/>
-                </Route>
-                <Route exact path="/schedule">
-                  <Schedule/>
-                </Route>
-                <Route exact path="/privacy">
-                  <Privacy/>
-                </Route>
-              </Switch>
-            </Content>
-            <Footer />
-          </Container>
-        </BrowserRouter>
-      </PlaylistProvider>
+      <ScreenProvider>
+        <PlaylistProvider>
+          <BrowserRouter>
+            <Container>
+              <BackgroundImage/>
+              <Header />
+              <Content item xs={ 12 }>
+                <Switch>
+                  <Route exact path="/">
+                    <Home/>
+                  </Route>
+                  <Route exact path="/playlists">
+                    <Playlists/>
+                  </Route>
+                  <Route exact path="/residents">
+                    <Residents/>
+                  </Route>
+                  <Route exact path="/schedule">
+                    <Schedule/>
+                  </Route>
+                  <Route exact path="/privacy">
+                    <Privacy/>
+                  </Route>
+                </Switch>
+              </Content>
+              <Footer />
+            </Container>
+          </BrowserRouter>
+        </PlaylistProvider>
+      </ScreenProvider>
     </>,
     document.getElementById('root'),
 );
