@@ -25,8 +25,8 @@ const Left = styled.div`
 `
 
 const Middle = styled.div<{ screen: Screen }>`
-  flex: 2;
-  flex-basis: ${ props => props.screen.isMobile ? '100%' : 'auto' };
+  flex: 1;
+  flex-basis: ${ props => props.screen.isMobile ? '100%' : '25%' };
   display: flex;
   justify-content: ${ props => props.screen.isMobile ? 'flex-start' : 'center' };;
   order: ${ props => props.screen.isMobile ? 3 : 2 };
