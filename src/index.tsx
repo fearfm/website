@@ -7,11 +7,10 @@ import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
-import { BottomMenu } from '@organisms/BottomMenu';
-import { Font } from "@atoms/Font";
 import { Privacy } from '@pages/Privacy';
 import { DocumentHead } from '@organisms/DocumentHead';
 import { Header } from '@organisms/Header';
+import { Footer } from '@organisms/Footer';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
 
@@ -56,11 +55,6 @@ const Content = styled(Grid)`
   z-index: 1;
 `
 
-const Footer = styled(Grid)`
-  padding: 1rem 3rem;
-  display: flex;
-`
-
 ReactDOM.render(
     <>
       <DocumentHead />
@@ -90,15 +84,7 @@ ReactDOM.render(
                 </Route>
               </Switch>
             </Content>
-            <Footer xs={12} item container alignItems="center">
-              <Grid xs={ 3 } item container direction="column">
-                <Grid item><BottomMenu /></Grid>
-                <Grid item><Font uppercase transparent bold>&copy; { (new Date()).getFullYear() } Fear.FM</Font></Grid>
-              </Grid>
-              <Grid xs={ 9 } item container justify="flex-end">
-                Powered by
-              </Grid>
-            </Footer>
+            <Footer />
           </Container>
         </BrowserRouter>
       </PlaylistProvider>
