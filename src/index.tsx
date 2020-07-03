@@ -7,12 +7,11 @@ import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
-import { TopMenu } from '@organisms/TopMenu';
 import { BottomMenu } from '@organisms/BottomMenu';
 import { Font } from "@atoms/Font";
-import { Logo } from "@atoms/Logo";
 import { Privacy } from '@pages/Privacy';
 import { DocumentHead } from '@organisms/DocumentHead';
+import { Header } from '@organisms/Header';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
 
@@ -29,28 +28,37 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Container = styled(Grid)`
-  height: 100vh;
-  padding: 2rem 3rem 0;
-  background-image: url("${ DotsSvg }");
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #000918;
-  background-position: center bottom 2rem;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
   color: #fff;
+  padding-top: 6rem;
 `
 
-
-const Header = styled(Grid)`
-  height: 4rem;
+const BackgroundImage = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url("${ DotsSvg }");
+  background-position: center bottom 2rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
 `
 
 const Content = styled(Grid)`
-  height: calc(100% - 8rem);
+  padding: 0 3rem;
+  height: calc(100% - 4rem);
+  overflow: auto;
+  z-index: 1;
 `
 
 const Footer = styled(Grid)`
-  height: 4rem;
+  padding: 1rem 3rem;
+  display: flex;
 `
 
 ReactDOM.render(
@@ -60,19 +68,10 @@ ReactDOM.render(
       <GlobalStyle />
       <PlaylistProvider>
         <BrowserRouter>
-          <Container container>
-            <Header xs={ 12 } item container alignItems="center" spacing={ 2 }>
-              <Grid xs={ 4 } item container>
-                <Logo />
-              </Grid>
-              <Grid xs={ 4 } item container>
-                <TopMenu />
-              </Grid>
-              <Grid xs={ 4 } item container justify="flex-end">
-                Social
-              </Grid>
-            </Header>
-            <Content xs={ 12 } item>
+          <Container>
+            <BackgroundImage/>
+            <Header />
+            <Content item xs={ 12 }>
               <Switch>
                 <Route exact path="/">
                   <Home/>
@@ -86,15 +85,15 @@ ReactDOM.render(
                 <Route exact path="/schedule">
                   <Schedule/>
                 </Route>
+                <Route exact path="/privacy">
+                  <Privacy/>
+                </Route>
               </Switch>
             </Content>
             <Footer xs={12} item container alignItems="center">
               <Grid xs={ 3 } item container direction="column">
                 <Grid item><BottomMenu /></Grid>
                 <Grid item><Font uppercase transparent bold>&copy; { (new Date()).getFullYear() } Fear.FM</Font></Grid>
-                <Route exact path="/privacy">
-                  <Privacy/>
-                </Route>
               </Grid>
               <Grid xs={ 9 } item container justify="flex-end">
                 Powered by

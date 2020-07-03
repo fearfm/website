@@ -15,6 +15,7 @@ const Link = styled.a<{ active?: boolean; size?: Size }>`
   cursor: pointer;
   transition: color 300ms;
   text-decoration: none;
+  white-space: nowrap;
   
   &:hover, &:active, &:focus {
     color: #fff;

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Grid } from '@material-ui/core';
-import { MenuLink, Size } from "@molecules/MenuLink";
+import {Box} from '@material-ui/core';
+import {MenuLink, Size} from "@molecules/MenuLink";
+import styled from "styled-components";
 
 export interface Props {
   items: Array<{
@@ -11,12 +12,18 @@ export interface Props {
   size?: Size;
 }
 
+const Wrapper = styled(Box)`
+  display: flex;
+`
+
 export const Menu: React.FC<Props> = ({ items, size}: Props) => (
-    <Grid container justify="space-between">
+    <Wrapper mx={ size === Size.large ? -2.5 : -1 }>
       { items.map(item => (
-          <MenuLink size={ size } key={ item.label } exact={ item.exact } to={ item.to }>{ item.label }</MenuLink>
+          <Box key={ item.label } px={ size === Size.large ? 2.5 : 1 }>
+            <MenuLink size={ size } exact={ item.exact } to={ item.to }>{ item.label }</MenuLink>
+          </Box>
       ))}
-    </Grid>
+    </Wrapper>
 )
 
 export {
