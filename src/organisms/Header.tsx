@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar, Box } from '@material-ui/core';
 import styled from "styled-components";
 import { Logo } from '@atoms/Logo';
 import { TopMenu } from "@organisms/TopMenu";
@@ -20,7 +20,6 @@ const MyToolbar = styled(Toolbar)`
 const Left = styled.div`
   flex: 1;
   display: flex;
-  padding-right: 1rem;
   order: 1;
 `
 
@@ -36,7 +35,6 @@ const Right = styled.div<{ screen: Screen }>`
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  padding-left: 1rem;
   order: ${ props => props.screen.isMobile ? 2 : 3 };
 `
 
@@ -49,10 +47,14 @@ export const Header: React.FC = () => {
             <Logo iconOnly={ screen.isMobile }/>
           </Left>
           <Middle screen={ screen }>
-            <TopMenu/>
+            <Box mx={ screen.isMobile ? 0 : 5 }>
+              <TopMenu/>
+            </Box>
           </Middle>
           <Right screen={ screen }>
-            <Socials/>
+            <Box mr="-0.3rem">
+              <Socials/>
+            </Box>
           </Right>
         </MyToolbar>
       </MyAppBar>
