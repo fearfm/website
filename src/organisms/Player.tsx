@@ -7,7 +7,7 @@ import {ScreenContext} from "@contexts/Screen";
 
 const Image = styled.img<{ isMobile: boolean }>`
   width: ${ props => props.isMobile ? '80%' : '100%' };
-  max-width: 500px;
+  max-width: 400px;
   margin-bottom: 3rem;
 `
 

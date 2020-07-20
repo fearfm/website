@@ -88,7 +88,7 @@ ReactDOM.render(
               <Container>
                 <Header />
                 <Content container justify="center">
-                  <Grid item>
+                  <Grid container>
                     <Switch>
                       <Route exact path="/">
                         <Home/>
