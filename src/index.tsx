@@ -51,7 +51,6 @@ const Root = styled(Grid)`
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1000px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,7 +88,7 @@ ReactDOM.render(
               <Container>
                 <Header />
                 <Content container justify="center">
-                  <Grid item xs={ 12 } md={ 6 }>
+                  <Grid item>
                     <Switch>
                       <Route exact path="/">
                         <Home/>

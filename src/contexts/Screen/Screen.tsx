@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ScreenProvider: React.FC<Props> = ({ children }: Props) => {
-  const isMobile = useMediaQuery('(max-width:900px)');
+  const isMobile = useMediaQuery('(max-width:970px)');
 
   return (
         <ScreenContext.Provider value={ { isMobile } }>

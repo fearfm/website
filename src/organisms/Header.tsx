@@ -5,11 +5,13 @@ import { Logo } from '@atoms/Logo';
 import { TopMenu } from "@organisms/TopMenu";
 import { ScreenContext, Screen } from "@contexts/Screen";
 import { Socials } from "@molecules/Socials";
+import {CenterColumn} from "@atoms/CenterColumn";
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   order: 1;
+  margin-bottom: 0.5rem;
 `
 
 const Middle = styled.div<{ screen: Screen }>`
@@ -31,12 +33,12 @@ export const Header: React.FC = () => {
   return (
       <Grid container justify="space-between">
         <Left>
-          <Box mr="2.5rem">
-            <Logo iconOnly={ screen.isMobile }/>
-          </Box>
+          <Logo iconOnly={ screen.isMobile }/>
         </Left>
         <Middle screen={ screen }>
-          <TopMenu/>
+          <CenterColumn>
+            <TopMenu/>
+          </CenterColumn>
         </Middle>
         <Right screen={ screen }>
           <Socials/>
