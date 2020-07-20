@@ -55,9 +55,9 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #000918;
   color: #fff;
   padding: 2rem 3rem 0;
+  z-index: 1;
 `
 
 const BackgroundImage = styled.div`
