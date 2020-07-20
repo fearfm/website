@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { NowPlaying } from '@organisms/NowPlaying';
+import { Player } from '@organisms/Player';
 
 export const Home: React.FC = () => (
     <>
         <h1>Home</h1>
-        <NowPlaying />
+        <Player />
     </>
 );

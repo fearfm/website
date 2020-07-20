@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { CssBaseline, Grid } from '@material-ui/core';
+import {Box, CssBaseline, Grid} from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
@@ -45,14 +45,19 @@ const GlobalStyle = createGlobalStyle`
 
 `
 
+const Root = styled(Grid)`
+  background-color: #000918;
+`
+
 const Container = styled.div`
+  width: 100%;
+  max-width: 1000px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: #000918;
   color: #fff;
-  padding-top: 6rem;
+  padding: 2rem 3rem 0;
 `
 
 const BackgroundImage = styled.div`
@@ -67,7 +72,6 @@ const BackgroundImage = styled.div`
 `
 
 const Content = styled(Grid)`
-  padding: 0 3rem;
   height: calc(100% - 4rem);
   overflow: auto;
   z-index: 1;
@@ -81,30 +85,36 @@ ReactDOM.render(
       <ScreenProvider>
         <PlaylistProvider>
           <BrowserRouter>
-            <Container>
+            <Root container justify="space-around">
               <BackgroundImage/>
-              <Header />
-              <Content item xs={ 12 }>
-                <Switch>
-                  <Route exact path="/">
-                    <Home/>
-                  </Route>
-                  <Route exact path="/playlists">
-                    <Playlists/>
-                  </Route>
-                  <Route exact path="/residents">
-                    <Residents/>
-                  </Route>
-                  <Route exact path="/schedule">
-                    <Schedule/>
-                  </Route>
-                  <Route exact path="/privacy">
-                    <Privacy/>
-                  </Route>
-                </Switch>
-              </Content>
-              <Footer />
-            </Container>
+              <Container>
+                <Header />
+                <Content container justify="center">
+                  <Grid item xs={ 12 } md={ 6 }>
+                    <Switch>
+                      <Route exact path="/">
+                        <Home/>
+                      </Route>
+                      <Route exact path="/playlists">
+                        <Playlists/>
+                      </Route>
+                      <Route exact path="/residents">
+                        <Residents/>
+                      </Route>
+                      <Route exact path="/schedule">
+                        <Schedule/>
+                      </Route>
+                      <Route exact path="/privacy">
+                        <Privacy/>
+                      </Route>
+                    </Switch>
+                  </Grid>
+                </Content>
+                <Box mt="auto">
+                  <Footer />
+                </Box>
+              </Container>
+            </Root>
           </BrowserRouter>
         </PlaylistProvider>
       </ScreenProvider>

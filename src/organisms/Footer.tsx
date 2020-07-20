@@ -4,7 +4,7 @@ import {Font} from "@atoms/Font";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 1rem 3rem;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
 `
