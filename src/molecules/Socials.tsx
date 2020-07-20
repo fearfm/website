@@ -6,6 +6,8 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  margin-right: -0.3rem;
+  z-index: 1;
 `
 
 const Link = styled.a`

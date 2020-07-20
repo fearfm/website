@@ -74,7 +74,6 @@ const BackgroundImage = styled.div`
 const Content = styled(Grid)`
   height: calc(100% - 4rem);
   overflow: auto;
-  z-index: 1;
 `
 
 ReactDOM.render(

@@ -39,9 +39,7 @@ export const Header: React.FC = () => {
           <TopMenu/>
         </Middle>
         <Right screen={ screen }>
-          <Box mr="-0.3rem">
-            <Socials/>
-          </Box>
+          <Socials/>
         </Right>
       </Grid>
   );
