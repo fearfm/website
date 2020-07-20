@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { CssBaseline, Grid, Icon } from '@material-ui/core';
+import { CssBaseline, Grid } from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';

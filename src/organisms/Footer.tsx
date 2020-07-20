@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Grid} from '@material-ui/core';
 import {BottomMenu} from "./BottomMenu";
 import {Font} from "@atoms/Font";
 import styled from "styled-components";

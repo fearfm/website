@@ -6,41 +6,41 @@ declare module "*.svg" {
 }
 
 declare module "*.png" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.jpg" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.jpeg" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.xml" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.webmanifest" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.eot" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.ttf" {
-  const value: any;
+  const value: never;
   export default value;
 }
 
 declare module "*.woff" {
-  const value: any;
+  const value: never;
   export default value;
 }
