@@ -1,21 +1,21 @@
 import * as React from 'react';
-import { Screen } from './Types';
+import {Screen} from './Types';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export const ScreenContext = React.createContext<Screen>({
-  isMobile: true,
+    isMobile: true,
 });
 
 interface Props {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
-export const ScreenProvider: React.FC<Props> = ({ children }: Props) => {
-  const isMobile = useMediaQuery('(max-width:970px)');
+export const ScreenProvider: React.FC<Props> = ({children}: Props) => {
+    const isMobile = useMediaQuery('(max-width:970px)');
 
-  return (
-        <ScreenContext.Provider value={ { isMobile } }>
-            { children }
+    return (
+        <ScreenContext.Provider value={{isMobile}}>
+            {children}
         </ScreenContext.Provider>
-  );
+    );
 };
