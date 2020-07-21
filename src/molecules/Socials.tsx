@@ -24,7 +24,7 @@ export const Socials: React.FC = () => (
           <Icon icon={ Type.facebook } />
         </Font>
       </Link>
-      <Link href="https://www.instagram.com/" target="_blank" title="Fear.FM on Instagram">
+      <Link href="https://www.instagram.com/fearfmofficial" target="_blank" title="Fear.FM on Instagram">
         <Font transparent="hover" size={ Size.large }>
           <Icon icon={ Type.instagram } />
         </Font>
