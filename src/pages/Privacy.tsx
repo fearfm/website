@@ -1,7 +1,8 @@
 import * as React from 'react'
+import {CenterColumn} from "@atoms/CenterColumn";
 
 export const Privacy: React.FC = () => (
-    <>
+    <CenterColumn>
         <h1>Privacy Policy for Fear.FM</h1>
         <p>At Fear.FM, accessible from https://www.fear.fm, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Fear.FM and how we use it.</p>
         <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
@@ -9,7 +10,7 @@ export const Privacy: React.FC = () => (
 
         <h2>Consent</h2>
         <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
-    
+
         <h2>Information we collect</h2>
         <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
         <p>If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
@@ -66,5 +67,5 @@ export const Privacy: React.FC = () => (
         <h2>Children&apos;s Information</h2>
         <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
         <p>Fear.FM does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-    </>
+    </CenterColumn>
 );

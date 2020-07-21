@@ -1,18 +1,23 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { CssBaseline, Grid } from '@material-ui/core';
+import {Box, CssBaseline, Grid} from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
 import { Schedule } from '@pages/Schedule';
-import { Privacy } from '@pages/Privacy';
 import { PlaylistProvider } from '@contexts/Playlist/Playlist';
-import { TopMenu } from '@organisms/TopMenu';
-import { BottomMenu } from '@organisms/BottomMenu';
+import { ScreenProvider } from '@contexts/Screen/Screen';
+import { Privacy } from '@pages/Privacy';
 import { DocumentHead } from '@organisms/DocumentHead';
+import { Header } from '@organisms/Header';
+import { Footer } from '@organisms/Footer';
 import styled, { createGlobalStyle } from "styled-components";
 import DotsSvg from '@assets/dots.svg';
+import IcomoonEot from '@assets/fonts/icomoon.eot';
+import IcomoonSvg from '@assets/fonts/icomoon.svg';
+import IcomoonTtf from '@assets/fonts/icomoon.ttf';
+import IcomoonWoff from '@assets/fonts/icomoon.woff';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -22,34 +27,52 @@ const GlobalStyle = createGlobalStyle`
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
   }
   
+  @font-face {
+    font-family: 'icomoon';
+    src: url('${IcomoonEot}?wuqlhg');
+    src: url('${IcomoonEot}?wuqlhg#iefix') format('embedded-opentype'),
+      url('${IcomoonTtf}?wuqlhg') format('truetype'),
+      url('${IcomoonWoff}?wuqlhg') format('woff'),
+      url('${ IcomoonSvg }') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
   body {
     font-family: "system";
   }
+
 `
 
-const Container = styled(Grid)`
-  height: 100vh;
-  padding: 0 3rem;
+const Root = styled(Grid)`
   background-color: #000918;
-  background-image: url("${DotsSvg}");
-  background-position: center bottom 2rem;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  color: #fff;
 `
 
+const Container = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 2rem 3rem 0;
+  z-index: 1;
+`
 
-const Header = styled(Grid)`
-  height: 4rem;
+const BackgroundImage = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url("${ DotsSvg }");
+  background-position: center bottom 2rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
 `
 
 const Content = styled(Grid)`
-  height: calc(100% - 8rem);
-`
-
-
-const Footer = styled(Grid)`
-  height: 4rem;
+  height: calc(100% - 4rem);
+  overflow: auto;
 `
 
 ReactDOM.render(
@@ -57,50 +80,42 @@ ReactDOM.render(
       <DocumentHead />
       <CssBaseline />
       <GlobalStyle />
-      <PlaylistProvider>
-        <BrowserRouter>
-          <Container container>
-            <Header xs={ 12 } item container alignItems="center">
-              <Grid xs={ 4 } item container>
-                Fear.FM
-              </Grid>
-              <Grid xs={ 4 } item container>
-                <TopMenu />
-              </Grid>
-              <Grid xs={ 4 } item container justify="flex-end">
-                Social
-              </Grid>
-            </Header>
-            <Content xs={ 12 } item>
-              <Switch>
-                <Route exact path="/">
-                  <Home/>
-                </Route>
-                <Route exact path="/playlists">
-                  <Playlists/>
-                </Route>
-                <Route exact path="/residents">
-                  <Residents/>
-                </Route>
-                <Route exact path="/schedule">
-                  <Schedule/>
-                </Route>
-                <Route exact path="/privacy">
-                  <Privacy/>
-                </Route>
-              </Switch>
-            </Content>
-            <Footer xs={ 12 } item container alignItems="center">
-              <Grid xs={ 3 } item container>
-                <BottomMenu />
-              </Grid>
-              <Grid xs={ 9 } item container justify="flex-end">
-                Powered by
-              </Grid>
-            </Footer>
-          </Container>
-        </BrowserRouter>
-      </PlaylistProvider>
+      <ScreenProvider>
+        <PlaylistProvider>
+          <BrowserRouter>
+            <Root container justify="space-around">
+              <BackgroundImage/>
+              <Container>
+                <Header />
+                <Content container justify="center">
+                  <Grid container>
+                    <Switch>
+                      <Route exact path="/">
+                        <Home/>
+                      </Route>
+                      <Route exact path="/playlists">
+                        <Playlists/>
+                      </Route>
+                      <Route exact path="/residents">
+                        <Residents/>
+                      </Route>
+                      <Route exact path="/schedule">
+                        <Schedule/>
+                      </Route>
+                      <Route exact path="/privacy">
+                        <Privacy/>
+                      </Route>
+                    </Switch>
+                  </Grid>
+                </Content>
+                <Box mt="auto">
+                  <Footer />
+                </Box>
+              </Container>
+            </Root>
+          </BrowserRouter>
+        </PlaylistProvider>
+      </ScreenProvider>
     </>,
     document.getElementById('root'),
 );

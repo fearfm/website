@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { NowPlaying } from '@organisms/NowPlaying';
+import { Player } from '@organisms/Player';
+import {CenterColumn} from "@atoms/CenterColumn";
 
 export const Residents: React.FC = () => (
-    <>
+    <CenterColumn>
         <h1>Residents</h1>
-        <NowPlaying />
-    </>
+        <Player />
+    </CenterColumn>
 );
