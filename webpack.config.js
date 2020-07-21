@@ -1,6 +1,7 @@
 const path = require('path');
 const { HotModuleReplacementPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     devtool: "source-map",
@@ -50,6 +51,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
         new HotModuleReplacementPlugin(),
+        new Dotenv(),
     ],
     devServer: {
         publicPath: '/',

@@ -12,7 +12,7 @@ export const PlaylistProvider: React.FC<Props> = ({ children }: Props) => {
   const [playlist, setPlaylist] = React.useState<TrackInfo[]>([]);
 
   React.useEffect(() => {
-    const socket = openSocket('https://nowplaying.fear.fm/');
+    const socket = openSocket(process.env.NOWPLAYING_HOST);
     socket.on('update', (data: TrackInfo[]) => {
       setPlaylist(data);
     });
