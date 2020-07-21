@@ -6,7 +6,6 @@ import {CenterColumn} from "@atoms/CenterColumn";
 
 const Page = styled(Grid)`
   height: 100%;
-  padding-top: 2rem;
 `
 
 export const Home: React.FC = () => (

@@ -6,6 +6,16 @@ import { TopMenu } from "@organisms/TopMenu";
 import { ScreenContext, Screen } from "@contexts/Screen";
 import { Socials } from "@molecules/Socials";
 import {CenterColumn} from "@atoms/CenterColumn";
+import {OuterPadding} from "@atoms/OuterPadding";
+
+const Wrapper = styled.header<{ screen: Screen }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #000918;
+`
 
 const Left = styled.div`
   flex: 1;
@@ -31,18 +41,22 @@ const Right = styled.div<{ screen: Screen }>`
 export const Header: React.FC = () => {
   const screen = React.useContext(ScreenContext);
   return (
-      <Grid container justify="space-between">
-        <Left>
-          <Logo iconOnly={ screen.isMobile }/>
-        </Left>
-        <Middle screen={ screen }>
-          <CenterColumn>
-            <TopMenu/>
-          </CenterColumn>
-        </Middle>
-        <Right screen={ screen }>
-          <Socials/>
-        </Right>
-      </Grid>
+      <Wrapper screen={ screen }>
+        <OuterPadding>
+          <Grid container justify="space-between" alignItems="center">
+            <Left>
+              <Logo iconOnly={ screen.isMobile }/>
+            </Left>
+            <Middle screen={ screen }>
+              <CenterColumn>
+                <TopMenu/>
+              </CenterColumn>
+            </Middle>
+            <Right screen={ screen }>
+              <Socials/>
+            </Right>
+          </Grid>
+        </OuterPadding>
+      </Wrapper>
   );
 }
