@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import {Box, CssBaseline, Grid} from '@material-ui/core';
+import { CssBaseline, Grid} from '@material-ui/core';
 import { Home } from '@pages/Home';
 import { Playlists } from '@pages/Playlists';
 import { Residents } from '@pages/Residents';
@@ -18,6 +18,7 @@ import IcomoonEot from '@assets/fonts/icomoon.eot';
 import IcomoonSvg from '@assets/fonts/icomoon.svg';
 import IcomoonTtf from '@assets/fonts/icomoon.ttf';
 import IcomoonWoff from '@assets/fonts/icomoon.woff';
+import {OuterPadding} from "@atoms/OuterPadding";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -42,25 +43,19 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "system";
   }
-
-`
-
-const Root = styled(Grid)`
-  background-color: #000918;
 `
 
 const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   color: #fff;
-  padding: 2rem 3rem 0;
-  z-index: 1;
 `
 
 const BackgroundImage = styled.div`
   position: fixed;
+  background-color: #000918;
   width: 100%;
   height: 100%;
   top: 0;
@@ -68,11 +63,19 @@ const BackgroundImage = styled.div`
   background-position: center bottom 2rem;
   background-size: 100%;
   background-repeat: no-repeat;
+  z-index: -1;
+`
+
+const Bottom = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 `
 
 const Content = styled(Grid)`
-  height: calc(100% - 4rem);
-  overflow: auto;
+  padding-top: 4rem;
+  min-height: 100%;
 `
 
 ReactDOM.render(
@@ -83,36 +86,34 @@ ReactDOM.render(
       <ScreenProvider>
         <PlaylistProvider>
           <BrowserRouter>
-            <Root container justify="space-around">
-              <BackgroundImage/>
-              <Container>
-                <Header />
-                <Content container justify="center">
-                  <Grid container>
-                    <Switch>
-                      <Route exact path="/">
-                        <Home/>
-                      </Route>
-                      <Route exact path="/playlists">
-                        <Playlists/>
-                      </Route>
-                      <Route exact path="/residents">
-                        <Residents/>
-                      </Route>
-                      <Route exact path="/schedule">
-                        <Schedule/>
-                      </Route>
-                      <Route exact path="/privacy">
-                        <Privacy/>
-                      </Route>
-                    </Switch>
-                  </Grid>
-                </Content>
-                <Box mt="auto">
-                  <Footer />
-                </Box>
-              </Container>
-            </Root>
+            <BackgroundImage/>
+            <Container>
+              <Header />
+              <Content container justify="center">
+                <OuterPadding>
+                  <Switch>
+                    <Route exact path="/">
+                      <Home/>
+                    </Route>
+                    <Route exact path="/playlists">
+                      <Playlists/>
+                    </Route>
+                    <Route exact path="/residents">
+                      <Residents/>
+                    </Route>
+                    <Route exact path="/schedule">
+                      <Schedule/>
+                    </Route>
+                    <Route exact path="/privacy">
+                      <Privacy/>
+                    </Route>
+                  </Switch>
+                </OuterPadding>
+              </Content>
+              <Bottom>
+                <Footer />
+              </Bottom>
+            </Container>
           </BrowserRouter>
         </PlaylistProvider>
       </ScreenProvider>
