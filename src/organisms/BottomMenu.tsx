@@ -3,22 +3,22 @@ import { Menu, Size } from "@molecules/Menu";
 
 export const BottomMenu: React.FC = () => {
     const items = [
+        // {
+        //   label: "Contact",
+        //   to: "/contact",
+        // },
         {
-          label: "Contact",
-          to: "/contact",
-        },
-        {
-          label: "Terms of service",
-          to: "/terms-of-service",
+          label: "Terms and conditions",
+          to: "/terms-and-conditions",
         },
         {
           label: "Privacy policy",
-          to: "/privacy",
+          to: "/privacy-policy",
         },
-        {
-          label: "FAQ",
-          to: "/faq",
-        },
+        // {
+        //   label: "FAQ",
+        //   to: "/faq",
+        // },
     ]
     return <Menu items={ items } size={ Size.small } />
 }

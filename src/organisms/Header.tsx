@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grid } from '@material-ui/core';
 import styled from "styled-components";
 import { Logo } from '@atoms/Logo';
-import { TopMenu } from "@organisms/TopMenu";
+// import { TopMenu } from "@organisms/TopMenu";
 import { ScreenContext, Screen } from "@contexts/Screen";
 import { Socials } from "@molecules/Socials";
 import {CenterColumn} from "@atoms/CenterColumn";
@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
             </Left>
             <Middle screen={ screen }>
               <CenterColumn>
-                <TopMenu/>
+                {/*<TopMenu/>*/}
               </CenterColumn>
             </Middle>
             <Right screen={ screen }>
