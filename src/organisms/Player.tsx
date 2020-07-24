@@ -12,32 +12,37 @@ const Image = styled.img<{ isMobile: boolean }>`
 `
 
 export const Player: React.FC = () => {
-  const playlist = React.useContext(PlaylistContext);
-  const screen = React.useContext(ScreenContext);
+    const playlist = React.useContext(PlaylistContext);
+    const screen = React.useContext(ScreenContext);
 
-  return (
-    <>
-      <Grid container direction="column" alignItems="center">
-        {playlist !== null && (
-          <>
-            <Image
-              isMobile={screen.isMobile}
-              src={playlist.track.image}
-            />
-            <Box mb={1}>
-              <Font size={Size.large} bold={true}>{playlist.track.title}</Font>
-            </Box>
-            <Font size={Size.small} transparent={true}>
-              {playlist.track.artist }
-              </Font>
-            </>
-        ) }
-        { playlist === null && (
-          <>
-            <Font size={Size.small} transparent={true}>Loading track info...</Font>
-          </>
-        )}
-      </Grid>
-    </>
-  );
+    return (
+        <>
+            <Grid container direction="column" alignItems="center">
+                {playlist !== null && (
+                    <>
+                        <Box mb={1}>
+                            <Font size={Size.large} bold={true}>
+                                {playlist.tracklist.artist} - {playlist.tracklist.title}
+                            </Font>
+                        </Box>
+                        <Image
+                            isMobile={screen.isMobile}
+                            src={playlist.track.image}
+                        />
+                        <Box mb={1}>
+                            <Font size={Size.large} bold={true}>{playlist.track.title}</Font>
+                        </Box>
+                        <Font size={Size.small} transparent={true}>
+                            {playlist.track.artist}
+                        </Font>
+                    </>
+                )}
+                {playlist === null && (
+                    <>
+                        <Font size={Size.small} transparent={true}>Loading track info...</Font>
+                    </>
+                )}
+            </Grid>
+        </>
+    );
 };
