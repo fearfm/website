@@ -1,4 +1,15 @@
+interface Track {
+    artist: string;
+    title: string;
+    image: string;
+}
+
+interface Tracklist {
+    artist: string;
+    title: string;
+}
+
 export interface TrackInfo {
-  tracklist: object;
-  track: object;
+  tracklist: Tracklist;
+  track: Track;
 }
