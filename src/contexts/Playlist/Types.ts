@@ -1,4 +1,4 @@
 export interface TrackInfo {
-  artist?: string;
-  title: string;
+  tracklist: object;
+  track: object;
 }
