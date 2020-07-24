@@ -2,18 +2,18 @@ import * as React from 'react';
 import * as openSocket from 'socket.io-client';
 import {TrackInfo} from './Types';
 
-export const PlaylistContext = React.createContext<TrackInfo[]>([]);
+export const PlaylistContext = React.createContext<TrackInfo>(null);
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const PlaylistProvider: React.FC<Props> = ({children}: Props) => {
-  const [playlist, setPlaylist] = React.useState<TrackInfo[]>([]);
+  const [playlist, setPlaylist] = React.useState<TrackInfo>(null);
 
   React.useEffect(() => {
     const socket = openSocket(process.env.NOWPLAYING_HOST);
-    socket.on('update', (data: TrackInfo[]) => {
+    socket.on('update', (data: TrackInfo) => {
       setPlaylist(data);
     });
     return (): void => {
