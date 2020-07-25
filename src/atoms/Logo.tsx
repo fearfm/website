@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from "styled-components";
-import { ReactComponent as LogoSvg } from '@assets/logo.svg';
+import {ReactComponent as LogoSvg} from '@assets/logo.svg';
 
 export interface Props {
-    iconOnly?: boolean;
+  iconOnly?: boolean;
 }
 
 const Inner = styled(LogoSvg)<Props>`
@@ -23,10 +23,10 @@ const Inner = styled(LogoSvg)<Props>`
   }
 
   .logo_svg__text {
-    display: ${ props => props.iconOnly ? 'none' : 'default' };
+    display: ${props => props.iconOnly ? 'none' : 'default'};
   }
 `
 
 export const Logo: React.FC<Props> = (props: Props) => (
-    <Inner { ...props } viewBox={ props.iconOnly ? '0 0 80 32' : '0 0 244 32' } />
+  <Inner {...props} viewBox={props.iconOnly ? '0 0 80 32' : '0 0 244 32'}/>
 );

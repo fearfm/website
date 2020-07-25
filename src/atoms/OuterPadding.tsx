@@ -9,10 +9,10 @@ const Wrapper = styled.div`
   padding: 0 2rem;
 `
 
-export const OuterPadding: React.FC<Props> = ({ children }: Props) => {
+export const OuterPadding: React.FC<Props> = ({children}: Props) => {
   return (
-      <Wrapper>
-        {children}
-      </Wrapper>
+    <Wrapper>
+      {children}
+    </Wrapper>
   )
 }

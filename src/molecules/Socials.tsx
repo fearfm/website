@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Font as FontComponent, Size } from "@atoms/Font";
-import { Icon, Type } from "@atoms/Icon";
+import {Font as FontComponent, Size} from "@atoms/Font";
+import {Icon, Type} from "@atoms/Icon";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -18,21 +18,21 @@ const Font = styled(FontComponent)`
 `
 
 export const Socials: React.FC = () => (
-    <Wrapper>
-      <Link href="https://www.facebook.com/Fear.FM/" target="_blank" rel="noopener" title="Fear.FM on Facebook">
-        <Font transparent="hover" size={ Size.large }>
-          <Icon icon={ Type.facebook } />
-        </Font>
-      </Link>
-      <Link href="https://www.instagram.com/fearfmofficial" target="_blank" rel="noopener" title="Fear.FM on Instagram">
-        <Font transparent="hover" size={ Size.large }>
-          <Icon icon={ Type.instagram } />
-        </Font>
-      </Link>
-      <Link href="https://twitter.com/fearfm" target="_blank" rel="noopener" title="Fear.FM on Twitter">
-        <Font transparent="hover" size={ Size.large }>
-          <Icon icon={ Type.twitter } />
-        </Font>
-      </Link>
-    </Wrapper>
+  <Wrapper>
+    <Link href="https://www.facebook.com/Fear.FM/" target="_blank" rel="noopener" title="Fear.FM on Facebook">
+      <Font transparent="hover" size={Size.large}>
+        <Icon icon={Type.facebook}/>
+      </Font>
+    </Link>
+    <Link href="https://www.instagram.com/fearfmofficial" target="_blank" rel="noopener" title="Fear.FM on Instagram">
+      <Font transparent="hover" size={Size.large}>
+        <Icon icon={Type.instagram}/>
+      </Font>
+    </Link>
+    <Link href="https://twitter.com/fearfm" target="_blank" rel="noopener" title="Fear.FM on Twitter">
+      <Font transparent="hover" size={Size.large}>
+        <Icon icon={Type.twitter}/>
+      </Font>
+    </Link>
+  </Wrapper>
 )
