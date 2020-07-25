@@ -14,8 +14,8 @@ const Wrapper = styled.div`
 export const Footer: React.FC = () => (
   <Wrapper>
     <OuterPadding>
-      <BottomMenu />
-      <Font uppercase transparent bold>&copy; { (new Date()).getFullYear() } Fear.FM</Font>
+      <BottomMenu/>
+      <Font uppercase transparent bold>&copy; {(new Date()).getFullYear()} Fear.FM</Font>
     </OuterPadding>
   </Wrapper>
 );

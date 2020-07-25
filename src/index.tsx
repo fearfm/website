@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import { CssBaseline, Grid} from '@material-ui/core';
+import {CssBaseline, Grid} from '@material-ui/core';
 import {Home} from '@pages/Home';
 import {Playlists} from '@pages/Playlists';
 import {Residents} from '@pages/Residents';
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
   }
-  
+
   @font-face {
     font-family: 'icomoon';
     src: url('${IcomoonEot}?wuqlhg');
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: block;
   }
-  
+
   body {
     font-family: "system";
   }
@@ -81,48 +81,48 @@ const Content = styled(Grid)`
 `
 
 ReactDOM.render(
-    <>
-        <DocumentHead/>
-        <CssBaseline/>
-        <GlobalStyle/>
-        <ScreenProvider>
-            <PlaylistProvider>
-                <BrowserRouter>
-                    <BackgroundImage/>
-                        <Container>
-                            <Header/>
-                            <Content container justify="center">
-                                <OuterPadding>
-                                    <Switch>
-                                        <Route exact path="/">
-                                            <Home/>
-                                        </Route>
-                                        <Route exact path="/playlists">
-                                            <Playlists/>
-                                        </Route>
-                                        <Route exact path="/residents">
-                                            <Residents/>
-                                        </Route>
-                                        <Route exact path="/schedule">
-                                            <Schedule/>
-                                        </Route>
-                                        <Route exact path="/privacy-policy">
-                                            <Privacy/>
-                                        </Route>
-                                        <Route exact path="/terms-and-conditions">
-                                            <Terms/>
-                                        </Route>
-                                    </Switch>
-                                </OuterPadding>
-                            </Content>
-                            <Bottom>
-                                <Footer/>
-                            </Bottom>
-                        </Container>
+  <>
+    <DocumentHead/>
+    <CssBaseline/>
+    <GlobalStyle/>
+    <ScreenProvider>
+      <PlaylistProvider>
+        <BrowserRouter>
+          <BackgroundImage/>
+          <Container>
+            <Header/>
+            <Content container justify="center">
+              <OuterPadding>
+                <Switch>
+                  <Route exact path="/">
+                    <Home/>
+                  </Route>
+                  <Route exact path="/playlists">
+                    <Playlists/>
+                  </Route>
+                  <Route exact path="/residents">
+                    <Residents/>
+                  </Route>
+                  <Route exact path="/schedule">
+                    <Schedule/>
+                  </Route>
+                  <Route exact path="/privacy-policy">
+                    <Privacy/>
+                  </Route>
+                  <Route exact path="/terms-and-conditions">
+                    <Terms/>
+                  </Route>
+                </Switch>
+              </OuterPadding>
+            </Content>
+            <Bottom>
+              <Footer/>
+            </Bottom>
+          </Container>
 
-                </BrowserRouter>
-            </PlaylistProvider>
-        </ScreenProvider>
-    </>,
-    document.getElementById('root'),
+        </BrowserRouter>
+      </PlaylistProvider>
+    </ScreenProvider>
+  </>,
+  document.getElementById('root'),
 );
