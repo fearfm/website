@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Grid} from '@material-ui/core';
 import styled from "styled-components";
 import {Logo} from '@atoms/Logo';
+import {Link} from 'react-router-dom';
 // import { TopMenu } from "@organisms/TopMenu";
 import {ScreenContext, Screen} from "@contexts/Screen";
 import {Socials} from "@molecules/Socials";
@@ -45,7 +46,9 @@ export const Header: React.FC = () => {
       <OuterPadding>
         <Grid container justify="space-between" alignItems="center">
           <Left>
-            <Logo iconOnly={screen.isMobile}/>
+            <Link to='/'>
+              <Logo iconOnly={screen.isMobile}/>
+            </Link>
           </Left>
           <Middle screen={screen}>
             <CenterColumn>
