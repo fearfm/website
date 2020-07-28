@@ -1,6 +1,7 @@
 /dist/
 /node_modules/
 /.idea/
+/.env
 
 # Ignore hidden macOS file
 .ds_store

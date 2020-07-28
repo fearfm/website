@@ -7,6 +7,7 @@ import {Playlists} from '@pages/Playlists';
 import {Residents} from '@pages/Residents';
 import {Schedule} from '@pages/Schedule';
 import {Terms} from "@pages/Terms";
+import {Dashboard} from '@pages/Admin/Dashboard';
 import {PlaylistProvider} from '@contexts/Playlist/Playlist';
 import {ScreenProvider} from '@contexts/Screen/Screen';
 import {Privacy} from '@pages/Privacy';
@@ -20,7 +21,7 @@ import IcomoonSvg from '@assets/fonts/icomoon.svg';
 import IcomoonTtf from '@assets/fonts/icomoon.ttf';
 import IcomoonWoff from '@assets/fonts/icomoon.woff';
 import {OuterPadding} from "@atoms/OuterPadding";
-
+import {Auth0Provider} from "@auth0/auth0-react";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -86,42 +87,52 @@ ReactDOM.render(
     <CssBaseline/>
     <GlobalStyle/>
     <ScreenProvider>
-      <PlaylistProvider>
-        <BrowserRouter>
-          <BackgroundImage/>
-          <Container>
-            <Header/>
-            <Content container justify="center">
-              <OuterPadding>
-                <Switch>
-                  <Route exact path="/">
-                    <Home/>
-                  </Route>
-                  <Route exact path="/playlists">
-                    <Playlists/>
-                  </Route>
-                  <Route exact path="/residents">
-                    <Residents/>
-                  </Route>
-                  <Route exact path="/schedule">
-                    <Schedule/>
-                  </Route>
-                  <Route exact path="/privacy-policy">
-                    <Privacy/>
-                  </Route>
-                  <Route exact path="/terms-and-conditions">
-                    <Terms/>
-                  </Route>
-                </Switch>
-              </OuterPadding>
-            </Content>
-            <Bottom>
-              <Footer/>
-            </Bottom>
-          </Container>
+      <Auth0Provider
+        domain={process.env.AUTH_DOMAIN}
+        clientId={process.env.AUTH_CLIENT_ID}
+        redirectUri={window.location.origin}
+      >
+        <PlaylistProvider>
+          <BrowserRouter>
+            <BackgroundImage/>
+            <Container>
+              <Header/>
+              <Content container justify="center">
+                <OuterPadding>
+                  <Switch>
+                    <Route exact path="/">
+                      <Home/>
+                    </Route>
+                    <Route exact path="/playlists">
+                      <Playlists/>
+                    </Route>
+                    <Route exact path="/residents">
+                      <Residents/>
+                    </Route>
+                    <Route exact path="/schedule">
+                      <Schedule/>
+                    </Route>
+                    <Route exact path="/privacy-policy">
+                      <Privacy/>
+                    </Route>
+                    <Route exact path="/terms-and-conditions">
+                      <Terms/>
+                    </Route>
 
-        </BrowserRouter>
-      </PlaylistProvider>
+                    <Route exact path="/admin">
+                      <Dashboard/>
+                    </Route>
+                  </Switch>
+                </OuterPadding>
+              </Content>
+              <Bottom>
+                <Footer/>
+              </Bottom>
+            </Container>
+
+          </BrowserRouter>
+        </PlaylistProvider>
+      </Auth0Provider>
     </ScreenProvider>
   </>,
   document.getElementById('root'),

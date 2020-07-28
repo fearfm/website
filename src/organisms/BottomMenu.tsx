@@ -8,6 +8,10 @@ export const BottomMenu: React.FC = () => {
     //   to: "/contact",
     // },
     {
+      label: "Artist login",
+      to: "/admin",
+    },
+    {
       label: "Terms and conditions",
       to: "/terms-and-conditions",
     },
