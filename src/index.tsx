@@ -20,6 +20,7 @@ import IcomoonSvg from '@assets/fonts/icomoon.svg';
 import IcomoonTtf from '@assets/fonts/icomoon.ttf';
 import IcomoonWoff from '@assets/fonts/icomoon.woff';
 import {OuterPadding} from "@atoms/OuterPadding";
+import {NoMatch} from "@pages/NoMatch";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -111,6 +112,9 @@ ReactDOM.render(
                   </Route>
                   <Route exact path="/terms-and-conditions">
                     <Terms/>
+                  </Route>
+                  <Route>
+                    <NoMatch />
                   </Route>
                 </Switch>
               </OuterPadding>
