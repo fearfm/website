@@ -1,0 +1,25 @@
+{
+  "short_name": "Fear.FM",
+  "name": "Fear.FM",
+  "icons": [
+    {
+      "src": "favicon/favicon.png",
+      "sizes": "32x32 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

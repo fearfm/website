@@ -1,0 +1,33 @@
+body {
+    background-image: url('./background.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    margin-top: 60px;
+}
+
+#root {
+    /* margin-bottom: 100px; */
+    height: 100vh;
+}
+
+a, a:active, a:hover {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #000918;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
