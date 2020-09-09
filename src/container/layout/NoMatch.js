@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react"
 function NoMatch() {
-  return (
-    <p>NoMatch</p>
-  );
+  return <p>NoMatch</p>
 }
 
-export default NoMatch;
+export default NoMatch

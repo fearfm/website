@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactPlayer from 'react-player'
+import React from "react"
+import ReactPlayer from "react-player"
 
 export const AudioplayerContext = React.createContext()
 
-export const AudioplayerProvider = ({children}) => {
-  const [isPlaying, setIsPlaying] = React.useState(false);
-  const [volume, setVolume] = React.useState(0.8);
+export const AudioplayerProvider = ({ children }) => {
+  const [isPlaying, setIsPlaying] = React.useState(false)
+  const [volume, setVolume] = React.useState(0.8)
 
   return (
     <AudioplayerContext.Provider
