@@ -22,7 +22,7 @@ function Home() {
       justify="center"
       alignItems="center"
     >
-      <Grid item xs={12} sm={8} md={4}>
+      <Grid item xs={12} sm={8} md={6} lg={4}>
         {nowplaying !== null && (
           <Box justifyContent="center" alignItems="center" textAlign="center">
             <Player
