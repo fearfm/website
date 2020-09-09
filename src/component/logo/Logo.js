@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { ReactComponent as LogoContent } from './logo.svg';
+import React from "react"
+import PropTypes from "prop-types"
+import styled from "styled-components"
+import { ReactComponent as LogoContent } from "./logo.svg"
 
 const Wrapper = styled.div`
   svg {
@@ -18,22 +18,21 @@ const Wrapper = styled.div`
     opacity: 0.9
   }
   .text {
-    display: ${props => props.icononly ? 'none' : 'default'};
+    display: ${(props) => (props.icononly ? "none" : "default")};
   }
-`;
+`
 
 Logo.propTypes = {
-  icononly: PropTypes.bool
-};
-
+  icononly: PropTypes.bool,
+}
 
 function Logo(props) {
-  const { iconOnly, ...rest } = props;
+  const { iconOnly, ...rest } = props
   return (
     <Wrapper {...rest} icononly={props.icononly}>
       <LogoContent />
     </Wrapper>
-  );
+  )
 }
 
-export default Logo;
+export default Logo

@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from './container/layout/Index';
-import NowplayingProvider from './context/Nowplaying';
-import { AudioplayerProvider } from './context/Audioplayer';
+import React from "react"
+import Layout from "./container/layout/Index"
+import NowplayingProvider from "./context/Nowplaying"
+import { AudioplayerProvider } from "./context/Audioplayer"
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Layout />
       </NowplayingProvider>
     </AudioplayerProvider>
-  );
+  )
 }
 
-export default App;
+export default App

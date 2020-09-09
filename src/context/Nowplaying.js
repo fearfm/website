@@ -1,20 +1,20 @@
-import React from 'react';
-import * as openSocket from 'socket.io-client';
+import React from "react"
+import * as openSocket from "socket.io-client"
 
 export const NowplayingContext = React.createContext()
 
-function NowplayingProvider({children}) {
-  const [nowplaying, setNowplaying] = React.useState(null);
+function NowplayingProvider({ children }) {
+  const [nowplaying, setNowplaying] = React.useState(null)
 
   React.useEffect(() => {
-    const socket = openSocket(process.env.REACT_APP_NOWPLAYING_HOST);
-    socket.on('update', (data) => {
-      setNowplaying(data);
-    });
+    const socket = openSocket(process.env.REACT_APP_NOWPLAYING_HOST)
+    socket.on("update", (data) => {
+      setNowplaying(data)
+    })
     return () => {
-      socket.disconnect();
-    };
-  }, []);
+      socket.disconnect()
+    }
+  }, [])
 
   return (
     <NowplayingContext.Provider value={nowplaying}>
@@ -23,4 +23,4 @@ function NowplayingProvider({children}) {
   )
 }
 
-export default NowplayingProvider;
+export default NowplayingProvider

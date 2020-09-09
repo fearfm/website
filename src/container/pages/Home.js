@@ -1,19 +1,19 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Player from '../../component/player/Player';
-import { Box } from '@material-ui/core';
-import {NowplayingContext} from '../../context/Nowplaying';
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
+import Player from "../../component/player/Player"
+import { Box } from "@material-ui/core"
+import { NowplayingContext } from "../../context/Nowplaying"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100%',
+    height: "100%",
   },
-}));
+}))
 
 function Home() {
-  const nowplaying = React.useContext(NowplayingContext);
-  const classes = useStyles();
+  const nowplaying = React.useContext(NowplayingContext)
+  const classes = useStyles()
   return (
     <Grid
       className={classes.root}
@@ -24,21 +24,18 @@ function Home() {
     >
       <Grid item xs={12} sm={8} md={4}>
         {nowplaying !== null && (
-          <Box
-            justifyContent="center"
-            alignItems="center"
-            textAlign='center'
-          >
+          <Box justifyContent="center" alignItems="center" textAlign="center">
             <Player
               image={nowplaying.track.image}
               artist={nowplaying.track.artist}
-              show={nowplaying.tracklist.artist + ' - ' + nowplaying.tracklist.title}
-              title={nowplaying.track.title} />
+              show={nowplaying.tracklist.artist + " - " + nowplaying.tracklist.title}
+              title={nowplaying.track.title}
+            />
           </Box>
         )}
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default Home;
+export default Home
