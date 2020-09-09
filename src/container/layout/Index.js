@@ -8,7 +8,6 @@ import Footer from '../../component/footer/Footer';
 import { Route, Switch } from 'react-router-dom';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsAndConditions from '../pages/TermsAndConditions';
-import GitHubForkRibbon from 'react-github-fork-ribbon';
 
 const useStyles = makeStyles({
   root: {
@@ -29,17 +28,10 @@ function Layout() {
   return (
     <div className={classes.root}>
       <TopNav />
-      <GitHubForkRibbon href="https://patreon.com/FearFM"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    position="left"
-      >
-        Become a Patreon!
-      </GitHubForkRibbon>
       <Grid container
-            direction="row"
-            justify="center"
-            alignItems="stretch"
+        direction="row"
+        justify="center"
+        alignItems="stretch"
       >
         <Grid item xs={12} className={classes.content}>
           <Switch>
