@@ -8,6 +8,7 @@ import Footer from "../../component/footer/Footer"
 import { Route, Switch } from "react-router-dom"
 import PrivacyPolicy from "../pages/PrivacyPolicy"
 import TermsAndConditions from "../pages/TermsAndConditions"
+import { Dashboard } from "../pages/Admin/Dashboard"
 
 const useStyles = makeStyles({
   root: {
@@ -39,6 +40,9 @@ function Layout() {
             </Route>
             <Route exact path="/terms-and-conditions">
               <TermsAndConditions />
+            </Route>
+            <Route exact path="/admin">
+              <Dashboard />
             </Route>
             <Route>
               <NoMatch />

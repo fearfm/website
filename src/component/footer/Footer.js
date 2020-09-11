@@ -43,6 +43,9 @@ function Footer() {
     <Grid className={classes.root} container direction="row">
       <Grid item xs={12} sm={8} md={6}>
         <div className={classes.links}>
+          <NavLink activeClassName="active" to="/admin">
+            Login
+          </NavLink>
           <a
             target="_blank"
             href="https://www.patreon.com/FearFM"
