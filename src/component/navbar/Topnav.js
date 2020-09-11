@@ -38,7 +38,7 @@ function TopNav() {
           <Logo />
         </Link>
         <Typography className={classes.socialIcons}>
-          {location.pathname !== "/" && <MiniControls size="10" />}
+          {location.pathname !== "/" && <MiniControls fontSize={24} />}
           <Tooltip title="Fear.FM on Facebook" aria-label="Facebook">
             <a
               href="https://www.facebook.com/Fear.FM/"

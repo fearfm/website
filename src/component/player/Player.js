@@ -104,7 +104,7 @@ const Player = ({ artist, title, show, image }) => {
         >
           <img width="100%" src={image} alt={artist + " - " + title} />
           <div className={controls ? classes.overlayHover : classes.overlay}>
-            <MiniControls fontSize={40} />
+            <MiniControls />
           </div>
         </div>
       </Grid>
