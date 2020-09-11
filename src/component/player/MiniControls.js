@@ -8,7 +8,7 @@ import { AudioplayerContext } from "../../context/Audioplayer"
 const useStyles = makeStyles((theme) => ({
   controlIcon: {
     cursor: "pointer",
-    fontSize: (props) => props.size ?? 100,
+    fontSize: (props) => props.fontSize ?? 100,
   },
 }))
 
@@ -43,7 +43,7 @@ const MiniControls = (props) => {
 }
 
 MiniControls.propTypes = {
-  fontSize: PropTypes.number.isRequired,
+  fontSize: PropTypes.number,
 }
 
 export default MiniControls
