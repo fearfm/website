@@ -12,10 +12,10 @@ const Wrapper = styled.div`
     opacity: 0.5;
   }
   .middle {
-    opacity 0.7;
+    opacity: 0.7;
   }
   .outside {
-    opacity: 0.9
+    opacity: 0.9;
   }
   .text {
     display: ${(props) => (props.icononly ? "none" : "default")};
