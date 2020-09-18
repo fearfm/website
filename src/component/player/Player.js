@@ -4,9 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Grid, Typography } from "@material-ui/core"
 import { AudioplayerContext } from "../../context/Audioplayer"
 import MiniControls from "./MiniControls"
-import VolumeSlider from "./VolumeSlider"
-import VolumeUpIcon from "@material-ui/icons/VolumeUp"
-import VolumeOffIcon from "@material-ui/icons/VolumeOff"
+import VolumeManager from "./VolumeManager"
 
 const useStyles = makeStyles((theme) => ({
   show: {
@@ -21,15 +19,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px 0 10px 0",
     fontSize: "1.4rem",
     fontWeight: 500,
-  },
-  volumeSlider: {
-    margin: "20px 0",
-    width: "10px",
-  },
-  volumeSliderWrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
   },
   controlIcon: {
     fontSize: 100,
@@ -68,17 +57,6 @@ const Player = ({ artist, title, show, image }) => {
   const [controls, setControls] = React.useState(
     audioplayerContext.playing ? false : true
   )
-  const [muted, setMuted] = React.useState(false)
-
-  const onVolumeChangeHandler = (event, value) => {
-    setMuted(value > 0 ? false : true)
-    const volume = value / 100
-    audioplayerContext.setVolume(volume)
-  }
-
-  const getPlayerVolumeLabel = (value) => {
-    return Math.round(value) + "%"
-  }
 
   const enableControls = () => {
     setControls(true)
@@ -110,11 +88,7 @@ const Player = ({ artist, title, show, image }) => {
           </div>
         </div>
       </Grid>
-      <Grid item xs={1} className={classes.volumeSliderWrapper}>
-        <VolumeSlider />
-        <VolumeUpIcon style={{ display: !muted ? "block" : "none" }} />
-        <VolumeOffIcon style={{ display: muted ? "block" : "none" }} />
-      </Grid>
+      <VolumeManager />
       <Grid item xs={12}>
         <Typography className={classes.title} variant="h1">
           {title}
