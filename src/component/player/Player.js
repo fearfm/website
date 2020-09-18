@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
-import { Grid, Slider, Typography } from "@material-ui/core"
+import { Grid, Typography } from "@material-ui/core"
 import { AudioplayerContext } from "../../context/Audioplayer"
 import MiniControls from "./MiniControls"
+import VolumeSlider from "./VolumeSlider"
 import VolumeUpIcon from "@material-ui/icons/VolumeUp"
 import VolumeOffIcon from "@material-ui/icons/VolumeOff"
 
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   volumeSlider: {
     margin: "20px 0",
+    width: "10px",
   },
   volumeSliderWrapper: {
     display: "flex",
@@ -109,15 +111,7 @@ const Player = ({ artist, title, show, image }) => {
         </div>
       </Grid>
       <Grid item xs={1} className={classes.volumeSliderWrapper}>
-        <Slider
-          className={classes.volumeSlider}
-          orientation="vertical"
-          onChange={onVolumeChangeHandler}
-          value={audioplayerContext.volume * 100}
-          valueLabelDisplay="auto"
-          valueLabelFormat={getPlayerVolumeLabel}
-          aria-labelledby="vertical-slider"
-        />
+        <VolumeSlider />
         <VolumeUpIcon style={{ display: !muted ? "block" : "none" }} />
         <VolumeOffIcon style={{ display: muted ? "block" : "none" }} />
       </Grid>
