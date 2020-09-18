@@ -1,7 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { MenuList, MenuItem, Grid } from "@material-ui/core"
-import {useAuth0, withAuthenticationRequired} from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
