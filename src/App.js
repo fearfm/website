@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "./container/layout/Index"
 import NowplayingProvider from "./context/Nowplaying"
 import { AudioplayerProvider } from "./context/Audioplayer"
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider } from "@auth0/auth0-react"
 
 function App() {
   return (
