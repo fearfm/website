@@ -23,7 +23,7 @@ export const AudioplayerProvider = ({ children }) => {
         width={0}
         height={0}
         config={{
-          file:{ forceAudio:true}
+          file: { forceAudio: true },
         }}
       />
       {children}
