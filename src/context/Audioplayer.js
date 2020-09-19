@@ -22,6 +22,9 @@ export const AudioplayerProvider = ({ children }) => {
         volume={volume}
         width={0}
         height={0}
+        config={{
+          file:{ forceAudio:true}
+        }}
       />
       {children}
     </AudioplayerContext.Provider>
