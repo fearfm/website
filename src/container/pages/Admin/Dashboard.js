@@ -1,7 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { MenuList, MenuItem, Grid } from "@material-ui/core"
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react"
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -9,11 +9,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const Dashboard = withAuthenticationRequired(() => {
   const classes = useStyles()
-  const { user, logout } = useAuth0();
+  const { logout } = useAuth0()
 
   const logoutClickHandler = () => {
-    logout({ returnTo: window.location.origin });
-  };
+    logout({ returnTo: window.location.origin })
+  }
 
   return (
     <Grid
@@ -31,4 +31,4 @@ export const Dashboard = withAuthenticationRequired(() => {
       </Grid>
     </Grid>
   )
-});
+})
