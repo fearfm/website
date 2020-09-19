@@ -82,7 +82,7 @@ const Player = ({ artist, title, show, image }) => {
           onMouseEnter={enableControls}
           onMouseLeave={disableControls}
         >
-          <img width="100%" src={image} alt={artist + " - " + title} />
+          <img style={{height: 'intrinsic'}} width="100%" src={image} alt={artist + " - " + title} />
           <div className={controls ? classes.overlayHover : classes.overlay}>
             <MiniControls />
           </div>
