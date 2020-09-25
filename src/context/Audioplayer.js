@@ -6,6 +6,14 @@ export const AudioplayerContext = React.createContext()
 export const AudioplayerProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = React.useState(false)
   const [volume, setVolume] = React.useState(0.8)
+  const [isLoading, setIsLoading] = React.useState(false)
+
+  const onBufferHandler = () => {
+    setIsLoading(true)
+  }
+  const onPlayHandler = () => {
+    setIsLoading(false)
+  }
 
   return (
     <AudioplayerContext.Provider
@@ -14,6 +22,7 @@ export const AudioplayerProvider = ({ children }) => {
         setVolume: setVolume,
         playing: isPlaying,
         volume: volume,
+        loading: isLoading,
       }}
     >
       <ReactPlayer
@@ -25,6 +34,8 @@ export const AudioplayerProvider = ({ children }) => {
         config={{
           file: { forceAudio: true },
         }}
+        onBuffer={onBufferHandler}
+        onPlay={onPlayHandler}
       />
       {children}
     </AudioplayerContext.Provider>
