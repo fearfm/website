@@ -11,7 +11,7 @@ export const AudioplayerProvider = ({ children }) => {
   const onBufferHandler = () => {
     setIsLoading(true)
   }
-  const onPlayHandler = () => {
+  const onBufferEndHandler = () => {
     setIsLoading(false)
   }
 
@@ -35,7 +35,7 @@ export const AudioplayerProvider = ({ children }) => {
           file: { forceAudio: true },
         }}
         onBuffer={onBufferHandler}
-        onPlay={onPlayHandler}
+        onBufferEnd={onBufferEndHandler}
       />
       {children}
     </AudioplayerContext.Provider>
