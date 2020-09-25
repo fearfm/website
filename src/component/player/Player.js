@@ -88,7 +88,15 @@ const Player = ({ artist, title, show, image }) => {
             src={image}
             alt={artist + " - " + title}
           />
-          <div className={controls ? classes.overlayHover : classes.overlay}>
+          <div
+            className={
+              audioplayerContext.loading
+                ? classes.overlayHover
+                : controls
+                ? classes.overlayHover
+                : classes.overlay
+            }
+          >
             <MiniControls />
           </div>
         </div>
