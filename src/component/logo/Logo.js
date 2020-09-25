@@ -23,7 +23,6 @@ const Wrapper = styled.div`
 `
 
 function Logo(props) {
-  console.log(props)
   const { iconOnly, ...rest } = props
   return (
     <Wrapper {...rest} iconOnly={iconOnly}>
