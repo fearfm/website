@@ -45,22 +45,22 @@ function TopNav() {
           {location.pathname !== "/" && <MiniControls size={24} />}
           <Typography>
             <Tooltip title="Fear.FM on Facebook" aria-label="Facebook">
-              {/* <a
+              <a
                 href="https://www.facebook.com/Fear.FM/"
                 target="_blank"
                 rel="noopener noreferrer"
-              > */}
-              <IconFacebook className={classes.icon} />
-              {/* </a> */}
+              >
+                <IconFacebook className={classes.icon} />
+              </a>
             </Tooltip>
             <Tooltip title="Fear.FM on Instagram" aria-label="Instagram">
-              {/* <a
+              <a
                 href="https://www.instagram.com/fearfmofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-              > */}
-              <IconInstagram className={classes.icon} />
-              {/* </a> */}
+              >
+                <IconInstagram className={classes.icon} />
+              </a>
             </Tooltip>
           </Typography>
         </div>
