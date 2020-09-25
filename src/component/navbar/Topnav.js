@@ -2,8 +2,7 @@ import React from "react"
 import { Link, useLocation } from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import { Tooltip, Typography } from "@material-ui/core"
+import { Toolbar, Tooltip, Typography } from "@material-ui/core"
 import Logo from "../logo/Logo"
 import IconFacebook from "@material-ui/icons/Facebook"
 import IconInstagram from "@material-ui/icons/Instagram"
@@ -14,9 +13,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: "#000918",
   },
+  toolbar: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
   socialIcons: {
-    textAlign: "right",
-    flexGrow: 1,
+    display: "flex",
+    // textAlign: "right",
+    // flexGrow: 1,
   },
   icon: {
     marginLeft: 10,
@@ -33,31 +37,33 @@ function TopNav() {
 
   return (
     <AppBar className={classes.root}>
-      <Toolbar>
+      <Toolbar className={classes.toolbar}>
         <Link to="/">
           <Logo />
         </Link>
-        <Typography className={classes.socialIcons}>
-          {location.pathname !== "/" && <MiniControls fontSize={24} />}
-          <Tooltip title="Fear.FM on Facebook" aria-label="Facebook">
-            <a
-              href="https://www.facebook.com/Fear.FM/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+        <div className={classes.socialIcons}>
+          {location.pathname !== "/" && <MiniControls size={24} />}
+          <Typography>
+            <Tooltip title="Fear.FM on Facebook" aria-label="Facebook">
+              {/* <a
+                href="https://www.facebook.com/Fear.FM/"
+                target="_blank"
+                rel="noopener noreferrer"
+              > */}
               <IconFacebook className={classes.icon} />
-            </a>
-          </Tooltip>
-          <Tooltip title="Fear.FM on Instagram">
-            <a
-              href="https://www.instagram.com/fearfmofficial"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+              {/* </a> */}
+            </Tooltip>
+            <Tooltip title="Fear.FM on Instagram" aria-label="Instagram">
+              {/* <a
+                href="https://www.instagram.com/fearfmofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+              > */}
               <IconInstagram className={classes.icon} />
-            </a>
-          </Tooltip>
-        </Typography>
+              {/* </a> */}
+            </Tooltip>
+          </Typography>
+        </div>
       </Toolbar>
     </AppBar>
   )

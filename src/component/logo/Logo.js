@@ -18,21 +18,26 @@ const Wrapper = styled.div`
     opacity: 0.9;
   }
   .text {
-    display: ${(props) => (props.icononly ? "none" : "default")};
+    display: ${(props) => (props.iconOnly ? "none" : "default")};
   }
 `
 
-Logo.propTypes = {
-  icononly: PropTypes.bool,
-}
-
 function Logo(props) {
+  console.log(props)
   const { iconOnly, ...rest } = props
   return (
-    <Wrapper {...rest} icononly={props.icononly}>
+    <Wrapper {...rest} iconOnly={iconOnly}>
       <LogoContent />
     </Wrapper>
   )
+}
+
+Logo.defaultProps = {
+  iconOnly: false,
+}
+
+Logo.propTypes = {
+  iconOnly: PropTypes.bool,
 }
 
 export default Logo
