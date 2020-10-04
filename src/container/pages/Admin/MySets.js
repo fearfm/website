@@ -9,9 +9,6 @@ import TableContainer from "@material-ui/core/TableContainer"
 import TableHead from "@material-ui/core/TableHead"
 import TableRow from "@material-ui/core/TableRow"
 import Moment from "react-moment"
-import IconEdit from "@material-ui/icons/Edit"
-import IconDelete from "@material-ui/icons/Delete"
-import Alert from "@material-ui/lab/Alert"
 import { Link } from "react-router-dom"
 
 const useStyles = makeStyles((theme) => ({
@@ -30,14 +27,8 @@ export const MySets = withAuthenticationRequired(() => {
       .json()
       .then((res) => setSets(res))
       .catch((err) => {
-        console.error(err)
+        // Handle this error
       })
-  }
-
-  const editSet = (id) => {}
-
-  const deleteSet = (id) => {
-    alert(id)
   }
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 import { withAuthenticationRequired } from "@auth0/auth0-react"
-import { Button, Grid, Typography, TextField, Divider } from "@material-ui/core"
+import { Button, Grid, Typography, TextField } from "@material-ui/core"
 import MuiAlert from "@material-ui/lab/Alert"
 import { makeStyles } from "@material-ui/core/styles"
 import { useForm } from "react-hook-form"
@@ -14,19 +14,20 @@ const useStyles = makeStyles((theme) => ({
 
 export const Add = withAuthenticationRequired(() => {
   const [error, setError] = React.useState(null)
-  const [formFields, setFormFields] = React.useState(
+  const [formFields] = React.useState(
     [1, 2, 3, 4]
     // [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
   )
   const classes = useStyles()
   const history = useHistory()
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit, errors } = useForm()
 
   const onSubmit = async (data) => {
     const filledFields = formFields.filter((id) => {
       if (data["artist" + id] !== "") {
         return id
       }
+      return null
     })
     const formattedTrackFields = filledFields.map((id) => {
       return {
@@ -56,7 +57,7 @@ export const Add = withAuthenticationRequired(() => {
         }
       })
       .catch((err) => {
-        console.error(err)
+        // Catch this error
       })
   }
 
