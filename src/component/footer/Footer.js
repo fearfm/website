@@ -51,7 +51,7 @@ function Footer() {
             href="https://www.patreon.com/FearFM"
             rel="noopener noreferrer"
           >
-            Donate!
+            Donate
           </a>
           <a
             target="_blank"
