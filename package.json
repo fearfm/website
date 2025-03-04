@@ -9,6 +9,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@iconify/icons-material-symbols": "^1.2.58",
     "@iconify/react": "^5.2.0",
     "@mantine/core": "^7.17.1",
     "@mantine/dates": "^7.17.1",

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@iconify/icons-material-symbols':
+        specifier: ^1.2.58
+        version: 1.2.58
       '@iconify/react':
         specifier: ^5.2.0
         version: 5.2.0(react@19.0.0)
@@ -455,6 +458,9 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@iconify/icons-material-symbols@1.2.58':
+    resolution: {integrity: sha512-EFBflkqoJmk8FJqA5U8xgJub3a3IaIX4hZVEY4nTnCr8XM4Qopu8H5DRRI9qStF8K3t7XQIJz3AeWmSZrF3+7w==}
 
   '@iconify/react@5.2.0':
     resolution: {integrity: sha512-7Sdjrqq3fkkQNks9SY3adGC37NQTHsBJL2PRKlQd455PoDi9s+Es9AUTY+vGLFOYs5yO9w9yCE42pmxCwG26WA==}
@@ -3044,6 +3050,10 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.9': {}
+
+  '@iconify/icons-material-symbols@1.2.58':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/react@5.2.0(react@19.0.0)':
     dependencies:
