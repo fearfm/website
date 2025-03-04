@@ -49,7 +49,7 @@ export default function Nowplaying() {
            src={"https:hardstyle.com/track_image/3c25f6a8-8425-48fa-a808-02a8fe893188/500x500/375"}
       />
       <div className={"flex h-full flex-col justify-center items-center"}>
-        <h1 className={"text-2xl text-white"}>Attack of the Dice</h1>
+        <h1 className={"text-2xl mb-1 text-white"}>Attack of the Dice</h1>
         <h2 className={"text-sm"}>Angerfist</h2>
         <div className={"text-8xl text-white"}>
           {getPlayerOverlayIcon()}
