@@ -1,8 +1,7 @@
 import React from "react";
 
 export default function Privacy() {
-  return (<>
-
+  return (<div>
       <h1>Privacy Policy for Fear.FM</h1>
       <p>
         At Fear.FM, accessible from https://www.fear.fm, one of our main priorities
@@ -212,6 +211,6 @@ export default function Privacy() {
         contact us immediately and we will do our best efforts to promptly remove
         such information from our records.
       </p>
-    </>
+    </div>
   );
 }

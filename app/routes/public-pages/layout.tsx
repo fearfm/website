@@ -24,7 +24,7 @@ export default function Index() {
   return (
     <PlayerProvider>
       <MantineProvider>
-        <header className={"text-xl xs:text-3xl px-8 py-4 h-16 fixed top-0 w-full flex items-center"}>
+        <header className={"text-xl xs:text-3xl px-8 py-4 h-16 fixed top-0 w-full flex items-center bg-[#000918]"}>
           <div className={"w-44"}>
             <Link to={"/"} className={"fill-white"}>
               <Logo />
@@ -41,26 +41,26 @@ export default function Index() {
         </header>
         <main className={twMerge(
           "flex mt-16 h-[calc(100vh-12rem)]",
-          isMobile ? '' : 'p-4',
+          isMobile ? '' : 'p-8',
         )}>
           <Outlet />
         </main>
-        {/*{!isMobile && (*/}
-        {/*  <footer className={"fixed bottom-0 p-8 w-full bg-[#000918] uppercase text-xs"}>*/}
-        {/*    <ul className={"mb-2 flex gap-4 list-none list-outside"}>*/}
-        {/*      <Link target="_blank" to="https://fearfm.atlassian.net/servicedesk/customer/portal/1">*/}
-        {/*        <li>Contact</li>*/}
-        {/*      </Link>*/}
-        {/*      <Link to={href('/terms-and-conditions')}>*/}
-        {/*        <li>Terms and conditions</li>*/}
-        {/*      </Link>*/}
-        {/*      <Link to={href('/privacy-policy')}>*/}
-        {/*        <li>Privacy policy</li>*/}
-        {/*      </Link>*/}
-        {/*    </ul>*/}
-        {/*    &copy; 2025 Fear.FM*/}
-        {/*  </footer>*/}
-        {/*)}*/}
+        {!isMobile && (
+          <footer className={"fixed bottom-0 p-8 w-full bg-[#000918] uppercase text-xs"}>
+            <ul className={"mb-2 flex gap-4 list-none list-outside"}>
+              <Link target="_blank" to="https://fearfm.atlassian.net/servicedesk/customer/portal/1">
+                <li>Contact</li>
+              </Link>
+              <Link to={href('/terms-and-conditions')}>
+                <li>Terms and conditions</li>
+              </Link>
+              <Link to={href('/privacy-policy')}>
+                <li>Privacy policy</li>
+              </Link>
+            </ul>
+            &copy; 2025 Fear.FM
+          </footer>
+        )}
       </MantineProvider>
     </PlayerProvider>
   );

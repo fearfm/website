@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Terms() {
-  return (<>
+  return (<div>
       <h1>Terms and Conditions</h1>
       <p>Welcome to Fear.FM!</p>
       <p>
@@ -250,6 +250,6 @@ export default function Terms() {
         provided free of charge, we will not be liable for any loss or damage of
         any nature.
       </p>
-    </>
+    </div>
   );
 }
