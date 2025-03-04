@@ -41,6 +41,7 @@ export default function PlayerProvider({children}: IProps) {
   }}>
     <ReactPlayer width={0}
       height={0}
+      light="http://placekitten.com/200/300"
       playing={playing}
       volume={volume/100}
       muted={muted}
