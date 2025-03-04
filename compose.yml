@@ -1,0 +1,7 @@
+name: fearfm-website
+
+services:
+  app:
+    build: .
+    ports:
+      - 9003:80

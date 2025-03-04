@@ -1,10 +1,10 @@
 import {Icon} from "@iconify/react";
-import {Slider} from "radix-ui";
 import React, {useContext, useState} from "react";
 import {PlayerContext} from "~/components/PlayerProvider";
 import {twMerge} from "tailwind-merge";
+import {Slider} from "@mantine/core";
 
-export default function Nowplaying() {
+export function Nowplaying() {
   const player = useContext(PlayerContext);
   const [overlay, setOverlay] = useState<boolean>(!player.playing);
 
@@ -40,9 +40,9 @@ export default function Nowplaying() {
                  icon={"lineicons:play"}/>;
   }
 
-  const heightDimensions = 'h-[300px] lg:h-[528px]';
-  const volumeDimensions = 'h-[270px] lg:h-[528px]';
-  const widthDimensions = 'w-[300px] lg:w-[528px]';
+  const heightDimensions = 'h-[300px] lg:h-[480px]';
+  const widthDimensions = 'w-[300px] lg:w-[480px]';
+
   return (
     <div className={"flex flex-col items-center justify-center w-full"}>
       <div className={twMerge("relative", widthDimensions, heightDimensions)}>
@@ -59,32 +59,25 @@ export default function Nowplaying() {
           </div>
           <img alt="Now playing"
                className={twMerge(widthDimensions, heightDimensions)}
-               src={"https://hardstyle.com/track_image/3c25f6a8-8425-48fa-a808-02a8fe893188/500x500/375"}
+               src={"https:hardstyle.com/track_image/3c25f6a8-8425-48fa-a808-02a8fe893188/500x500/375"}
           />
         </div>
-        <div className={"absolute -right-16 top-0 opacity-70"}>
-          <div className={twMerge(volumeDimensions)}>
-            <Slider.Root
-              className="SliderRoot"
-              defaultValue={[player.volume]}
-              value={[player.volume]}
-              orientation="vertical"
-              onValueChange={(value) => player.setVolume(value[0])}
-            >
-              <Slider.Track className="SliderTrack">
-                <Slider.Range className="SliderRange"/>
-              </Slider.Track>
-              <Slider.Thumb className="SliderThumb"/>
-            </Slider.Root>
-          </div>
-          <div className={"cursor-pointer text-3xl pt-2"}>
+        <div className={"flex flex-row items-center"}>
+          <Slider className={"w-full"}
+                  onChange={(value) => player.setVolume(value)}
+                  color="gray"
+                  radius="xl"
+                  size="xl"
+                  value={player.volume}
+          />
+          <div className={"ml-4 text-3xl cursor-pointer"}>
             {getVolumeIcon()}
           </div>
         </div>
-      </div>
-      <div className={"mt-6 flex flex-col justify-center"}>
-        <p className={"text-2xl text-gray-300 font-bold text-center"}>Track title (bla remix)</p>
-        <p className={"text-xl text-center"}>Artist</p>
+        <div className={"mt-6 flex flex-col justify-center"}>
+          <p className={"text-2xl text-gray-300 font-bold text-center"}>Track title (bla remix)</p>
+          <p className={"text-xl text-center"}>Artist</p>
+        </div>
       </div>
     </div>
   );

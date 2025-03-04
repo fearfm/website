@@ -1,91 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif,
+    --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html,
 body {
+    @apply bg-[#000918] !text-gray-400;
 
-  background-image: url('./assets/background.svg');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-attachment: fixed;
+    --mantine-color-body: #00918;
 
-  font-size: 14px;
+    background-image: url('./assets/background.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
 
-  @apply bg-[#000918] text-gray-400;
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #000918;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #000918;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.4);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 @layer components {
-  h1 {
-    @apply text-xl font-bold mb-2;
-  }
-
-  h2 {
-    @apply text-lg font-bold mb-2;
-  }
-
-  p {
-    @apply mb-4;
-  }
-
-  ul {
-    @apply mb-4 list-inside list-disc;
-  }
-
-  .logo {
-    @apply fill-white;
-
-    .inside {
-      @apply opacity-50;
+    h1 {
+        @apply text-xl font-bold mb-2;
     }
-    .middle {
-      @apply opacity-70;
+
+    h2 {
+        @apply text-lg font-bold mb-2;
     }
-    .outside {
-      @apply opacity-90;
+
+    p {
+        @apply mb-4;
     }
-  }
 
-  .SliderRoot {
-    @apply relative flex items-center cursor-pointer;
-  }
-  .SliderRoot[data-orientation="vertical"] {
-    @apply flex-col w-6 h-full;
-  }
-  .SliderTrack {
-    @apply grow relative bg-gray-600;
-  }
-  .SliderTrack[data-orientation="vertical"] {
-    @apply w-2 rounded-full;
-  }
+    ul {
+        @apply mb-4 list-inside list-disc;
+    }
 
-  .SliderRange {
-    @apply absolute bg-gray-500;
-  }
-  .SliderRange[data-orientation="vertical"] {
-    @apply w-full;
-  }
+    .logo {
+        .inside {
+            @apply opacity-50;
+        }
 
-  .SliderThumb {
-    @apply block w-2 h-2 bg-gray-400 cursor-pointer  rounded-full;
-  }
+        .middle {
+            @apply opacity-70;
+        }
+
+        .outside {
+            @apply opacity-90;
+        }
+    }
 }

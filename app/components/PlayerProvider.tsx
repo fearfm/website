@@ -30,8 +30,6 @@ export default function PlayerProvider({children}: IProps) {
   const [volume, setVolume] = useState<number>(80);
   const [loading, setLoading] = useState<boolean>(false);
 
-  console.log(loading);
-
   return <PlayerContext.Provider value={{
     playing,
     setPlaying,
@@ -49,7 +47,7 @@ export default function PlayerProvider({children}: IProps) {
       config={{
         file: { forceAudio: true },
       }}
-      url={"http://localhost/listen/fear.fm/radio.mp3"}
+      url={"http://162.19.226.112:9000/listen/fear.fm/radio.mp3"}
       onBuffer={() => setLoading(true)}
       onBufferEnd={() => setLoading(false)}
     />
