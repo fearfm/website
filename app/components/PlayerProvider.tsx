@@ -47,7 +47,7 @@ export default function PlayerProvider({children}: IProps) {
       config={{
         file: { forceAudio: true },
       }}
-      url={"http://162.19.226.112:9000/listen/fear.fm/radio.mp3"}
+      url={"https://stream.pimjansen.dev"}
       onBuffer={() => setLoading(true)}
       onBufferEnd={() => setLoading(false)}
     />
