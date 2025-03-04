@@ -40,7 +40,7 @@ export default function Index() {
           </div>
         </header>
         <main className={twMerge(
-          "flex mt-16 h-[calc(100vh-8rem)]",
+          "flex mt-16 h-[calc(100vh-12rem)]",
           isMobile ? '' : 'p-4',
         )}>
           <Outlet />
