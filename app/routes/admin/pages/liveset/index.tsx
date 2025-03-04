@@ -142,7 +142,8 @@ export async function loader({ request }: Route.LoaderArgs) {
     page,
   }
 }
-export function Index({loaderData}: Route.ComponentProps) {
+
+export default function Index({loaderData}: Route.ComponentProps) {
   const {page} = loaderData;
 
   return (

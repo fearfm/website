@@ -1,15 +1,10 @@
-FROM node:22-bullseye-slim AS build
+FROM node:22-bullseye-slim
 WORKDIR /app
+
 RUN npm install -g pnpm
 COPY . /app
+
 RUN pnpm install --frozen-lockfile
 RUN pnpm build
 
-FROM node:22-bullseye-slim AS prod
-WORKDIR /app
-RUN npm install -g pnpm
-COPY --from=build /app/node_modules /app/node_modules
-COPY --from=build /app/build /app/build
-COPY --from=build /app/public /app/public
-COPY --from=build /app/package.json /app/package.json
 CMD ["pnpm", "run", "start"]

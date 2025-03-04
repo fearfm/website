@@ -20,7 +20,7 @@ export async function loader() {
   return {}
 }
 
-export function Index() {
+export default function Index() {
   return (
     <PlayerProvider>
       <MantineProvider>

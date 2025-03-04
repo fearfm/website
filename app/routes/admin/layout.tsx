@@ -6,7 +6,7 @@ import '~/admin.css';
 import '@mantine/core/styles.css';
 import '@mantine/dropzone/styles.css';
 
-export function Layout() {
+export default function Layout() {
   return (
     <MantineProvider>
       <div className="min-h-screen xl:flex">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Privacy() {
+export default function Privacy() {
   return (<>
 
       <h1>Privacy Policy for Fear.FM</h1>

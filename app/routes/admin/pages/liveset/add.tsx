@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const generateRandom = () => Math.random().toString(36).substring(2, 15) + Math.random().toString(23).substring(2, 5);
 
-export function Add() {
+export default function Add() {
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [dropzoneFilename, setDropzoneFilename] = useState<string | null>(null);

@@ -4,7 +4,7 @@ import {PlayerContext} from "~/components/PlayerProvider";
 import {twMerge} from "tailwind-merge";
 import {Slider} from "@mantine/core";
 
-export function Nowplaying() {
+export default function Nowplaying() {
   const player = useContext(PlayerContext);
   const [overlay, setOverlay] = useState<boolean>(!player.playing);
 

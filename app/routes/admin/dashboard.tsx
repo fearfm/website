@@ -1,7 +1,7 @@
 import CurrentListenerChart from "~/routes/admin/components/CurrentListenerChart";
 import RecentTracksChart from "~/routes/admin/components/RecentTracksChart";
 
-export function Dashboard() {
+export default function Dashboard() {
   return (
     <>
       {/*<PageMeta*/}
