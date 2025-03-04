@@ -27,20 +27,20 @@ export default function Index() {
         <header className={"text-xl xs:text-3xl p-8 h-24 fixed top-0 w-full flex items-center"}>
           <div className={"w-44"}>
             <Link to={"/"} className={"fill-white"}>
-              <Logo />
+              <Logo full={false} />
             </Link>
           </div>
-          <div className={"flex grow gap-4 text-gray-400 justify-end"}>
-            <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"
-                  to={"https://youtube.com/fearfm"}><Icon icon={"lineicons:youtube"}/></Link>
-            <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"
-                  to={"https://facebook.com/Fear.FM"}><Icon icon={"lineicons:facebook-rounded"}/></Link>
-            <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"
-                  to={"https://instagram.com/fearfmofficial"}><Icon icon={"lineicons:instagram"}/></Link>
-          </div>
+          {/*<div className={"flex grow gap-4 text-gray-400 justify-end"}>*/}
+          {/*  <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"*/}
+          {/*        to={"https://youtube.com/fearfm"}><Icon icon={"lineicons:youtube"}/></Link>*/}
+          {/*  <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"*/}
+          {/*        to={"https://facebook.com/Fear.FM"}><Icon icon={"lineicons:facebook-rounded"}/></Link>*/}
+          {/*  <Link target={"_blank"} rel="noopener noreferrer" className="duration-300 hover:text-gray-100"*/}
+          {/*        to={"https://instagram.com/fearfmofficial"}><Icon icon={"lineicons:instagram"}/></Link>*/}
+          {/*</div>*/}
         </header>
         <main className={twMerge(
-          "flex mt-24 h-[calc(100vh-6rem)]",
+          "flex h-screen",
           isMobile ? '' : 'p-4',
         )}>
           <Outlet />
