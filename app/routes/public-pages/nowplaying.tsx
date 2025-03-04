@@ -47,7 +47,7 @@ export default function Nowplaying() {
     <div className={"flex flex-col"}>
       <img alt="Now playing"
            className="w-screen aspect-square object-cover"
-           src={"https:hardstyle.com/track_image/3c25f6a8-8425-48fa-a808-02a8fe893188/500x500/375"}
+           src={"https://hardstyle.com/track_image/3c25f6a8-8425-48fa-a808-02a8fe893188/500x500/375"}
       />
       <div className={"flex h-full flex-col justify-center items-center"}>
         <h1 className={"text-2xl mb-1 text-white"}>Attack of the Dice</h1>
