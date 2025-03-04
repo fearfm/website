@@ -44,7 +44,6 @@ export default function Nowplaying() {
                  icon={playArrowRounded}/>;
   }
 
-  console.log(isMobile);
   if (isMobile) {
     return (
       <div className={"flex flex-col"}>
