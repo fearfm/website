@@ -1,10 +1,9 @@
 import {Icon} from "@iconify/react";
 import playArrowRounded from "@iconify/icons-material-symbols/play-arrow-rounded";
 import pauseRounded from "@iconify/icons-material-symbols/pause-rounded";
+import autoPauseRounded from "@iconify/icons-material-symbols/autopause-rounded";
 import React, {useContext, useState} from "react";
 import {PlayerContext} from "~/components/PlayerProvider";
-import {twMerge} from "tailwind-merge";
-import {Slider} from "@mantine/core";
 
 export default function Nowplaying() {
   const player = useContext(PlayerContext);
@@ -31,14 +30,16 @@ export default function Nowplaying() {
   const getPlayerOverlayIcon = () => {
     if (player.loading) {
       return <Icon className="animate-spin"
-                   icon={"hugeicons:loading-02"}/>;
+                   icon={autoPauseRounded}/>;
     }
 
     if (player.playing) {
-      return <Icon onClick={() => player.setPlaying(false)} className="cursor-pointer"
+      return <Icon onClick={() => player.setPlaying(false)}
+                   className="cursor-pointer"
                    icon={pauseRounded} />;
     }
-    return <Icon onClick={() => player.setPlaying(true)} className="cursor-pointer"
+    return <Icon onClick={() => player.setPlaying(true)}
+                 className="cursor-pointer"
                  icon={playArrowRounded} />;
   }
 
