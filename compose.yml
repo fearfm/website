@@ -3,5 +3,6 @@ name: fearfm-website
 services:
   app:
     build: .
+    restart: unless-stopped
     ports:
       - 9003:3000
