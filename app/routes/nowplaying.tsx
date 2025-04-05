@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { PlayerContext } from "~/components/PlayerProvider";
 import useDeviceDetect from "~/hooks/useDeviceDetect";
 import { wsContext } from "~/socket/ws.context";
-import defaultArtwork from "~/assets/artwork-default.jpg";
+import defaultArtwork from "~/assets/artwork-default.png";
 
 interface INowplaying {
   artist: string;
@@ -95,9 +95,9 @@ export default function Nowplaying() {
         />
       </div>
       <div>
-        <h1 className={"text-4xl mb-1 text-white"}>{nowplaying.title}</h1>
+        <h1 className={"text-4xl mb-2 text-white"}>{nowplaying.title}</h1>
         <h2 className={"text-xl"}>{nowplaying.artist}</h2>
-        <div className={"-ml-6 text-8xl text-white"}>
+        <div className={"-ml-4 text-8xl text-white"}>
           {getPlayerOverlayIcon()}
         </div>
       </div>
