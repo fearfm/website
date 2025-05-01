@@ -74,9 +74,9 @@ export default function Nowplaying() {
           src={nowplaying.image}
         />
         <div className={"flex h-full flex-col justify-center items-center"}>
-          <h1 className={"text-2xl mb-1 text-white"}>{nowplaying.title}</h1>
+          <h1 className={"text-xl px-2 mt-3 mb-2 text-white break-words line-clamp-2"}>{nowplaying.title}</h1>
           <h2 className={"text-sm"}>{nowplaying.artist}</h2>
-          <div className={"text-8xl text-white"}>{getPlayerOverlayIcon()}</div>
+          <div className={"text-6xl text-white"}>{getPlayerOverlayIcon()}</div>
         </div>
       </div>
     );
