@@ -54,14 +54,6 @@ export default function Index() {
               target={"_blank"}
               rel="noopener noreferrer"
               className="duration-300 hover:text-gray-100"
-              to={"https://youtube.com/fearfm"}
-            >
-              <Icon icon={"lineicons:youtube"} />
-            </Link>
-            <Link
-              target={"_blank"}
-              rel="noopener noreferrer"
-              className="duration-300 hover:text-gray-100"
               to={"https://facebook.com/Fear.FM"}
             >
               <Icon icon={"lineicons:facebook-rounded"} />
