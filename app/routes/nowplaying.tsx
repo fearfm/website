@@ -35,15 +35,15 @@ export default function Nowplaying() {
 
   const getVolumeIcon = () => {
     if (player.muted) {
-      return <VolumeMute />;
+      return <VolumeMute className={"cursor-pointer"} onClick={() => player.setMuted(false)}/>;
     } else if (player.volume < 1) {
-      return <VolumeOff />;
+      return <VolumeOff className={"cursor-pointer"} onClick={() => player.setMuted(true)} />;
     } else if (player.volume < 30) {
-      return <VolumeLow />;
+      return <VolumeLow className={"cursor-pointer"} onClick={() => player.setMuted(true)} />;
     } else if (player.volume < 80) {
-      return <VolumeMid />;
+      return <VolumeMid className={"cursor-pointer"} onClick={() => player.setMuted(true)} />;
     } else {
-      return <VolumeHigh />;
+      return <VolumeHigh className={"cursor-pointer"} onClick={() => player.setMuted(true)} />;
     }
   }
 
