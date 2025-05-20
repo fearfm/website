@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { PlayerContext } from "~/components/PlayerProvider";
 import useDeviceDetect from "~/hooks/useDeviceDetect";
 import { wsContext } from "~/socket/ws.context";
-import defaultArtwork from "~/assets/artwork-default.png";
+import defaultArtwork from "~/assets/artwork-default-new.jpg";
 import { Slider, Tooltip } from "radix-ui";
 import VolumeHigh from "~/components/Icons/VolumeHight";
 import VolumeMute from "~/components/Icons/VolumeMute";
