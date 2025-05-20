@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player";
-import React, {createContext, type ReactNode, useState} from "react";
+import {createContext, type ReactNode, useState} from "react";
 
 interface PlayerContextValue {
   playing: boolean;
@@ -14,7 +14,7 @@ interface PlayerContextValue {
 export const PlayerContext = createContext<PlayerContextValue>({
   playing: false,
   setPlaying: () => {},
-  volume: 70,
+  volume: 80,
   setVolume: () => {},
   muted: false,
   setMuted: () => {},

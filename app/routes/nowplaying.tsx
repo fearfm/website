@@ -73,7 +73,6 @@ export default function Nowplaying() {
   useEffect(() => {
     if (!socket) return;
     socket.on("nowplaying update", (res) => {
-      console.log(res);
       setNowplaying({
         artist: res.track.artist,
         title: res.track.title,
@@ -85,6 +84,11 @@ export default function Nowplaying() {
       socket.off("nowplaying update");
     };
   }, [socket]);
+
+  useEffect(() => {
+    const volume = parseInt(window.localStorage.getItem('volume') ?? "80");
+    player.setVolume(volume);
+  }, []);
 
   if (isMobile) {
     return (
@@ -102,6 +106,7 @@ export default function Nowplaying() {
       </div>
     );
   }
+
   return (
     <div
       className={
@@ -122,13 +127,16 @@ export default function Nowplaying() {
           {getVolumeIcon()}
           <Slider.Root
             className="relative flex h-5 w-96 touch-none select-none items-center"
-            onValueChange={(volume) => player.setVolume(volume[0])}
-            defaultValue={[player.volume]}
+            onValueChange={(volume) => {
+              player.setVolume(volume[0]);
+              window.localStorage.setItem('volume', volume[0].toString())
+            }}
+            value={[player.volume]}
             max={100}
             step={1}
           >
             <Slider.Track className="relative h-[3px] grow rounded-full bg-slate-700">
-              <Slider.Range className="absolute h-full rounded-full bg-white" />
+              <Slider.Range className="absolute h-full rounded-full bg-white cursor-pointer" />
             </Slider.Track>
             <Tooltip.Root
               delayDuration={0}
