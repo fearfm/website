@@ -29,7 +29,7 @@ export default function Nowplaying() {
   const [nowplaying, setNowplaying] = useState<INowplaying>({
     artist: "Be Proud and Listen Loud",
     title: "Fear.FM",
-    tracklist: "",
+    tracklist: "Fear.FM general rotation",
     image: defaultArtwork,
   });
 
@@ -122,7 +122,8 @@ export default function Nowplaying() {
       </div>
       <div>
         <h1 className={"text-4xl mb-2 text-white"}>{nowplaying.title}</h1>
-        <h2 className={"text-xl"}>{nowplaying.artist}</h2>
+        <h2 className={"text-2xl"}>{nowplaying.artist}</h2>
+        <span className={"text-xs bg-slate-800 rounded-md px-2 py-1"}>{nowplaying.tracklist}</span>
         <div className={"flex items-center mt-4 gap-4"}>
           {getVolumeIcon()}
           <Slider.Root
@@ -136,7 +137,7 @@ export default function Nowplaying() {
             step={1}
           >
             <Slider.Track className="relative h-[3px] grow rounded-full bg-slate-700">
-              <Slider.Range className="absolute h-full rounded-full bg-white cursor-pointer" />
+              <Slider.Range className="absolute h-full rounded-full bg-white hover:bg-slate-200 cursor-pointer" />
             </Slider.Track>
             <Tooltip.Root
               delayDuration={0}
@@ -144,7 +145,7 @@ export default function Nowplaying() {
             >
               <Tooltip.Trigger asChild>
                 <Slider.Thumb
-                  className="cursor-pointer block size-5 rounded-[10px] bg-white shadow-[0_2px_10px] shadow-blackA4 hover:bg-violet3 focus:shadow-[0_0_0_5px] focus:shadow-blackA5 focus:outline-none"
+                  className="cursor-pointer block size-5 rounded-[10px] bg-white hover:bg-slate-200 shadow-[0_2px_10px] shadow-blackA4 hover:bg-violet3 focus:shadow-[0_0_0_5px] focus:shadow-blackA5 focus:outline-none"
                   aria-label="Volume"
                   onPointerDown={() => setVolumeTooltipOpen(true)}
                   onPointerUp={() => setVolumeTooltipOpen(false)}
@@ -162,7 +163,7 @@ export default function Nowplaying() {
             </Tooltip.Root>
           </Slider.Root>
         </div>
-        <div className={"-ml-6 text-8xl text-white"}>
+        <div className={"-ml-6 text-8xl text-white hover:text-slate-200"}>
           {getPlayerOverlayIcon()}
         </div>
       </div>
