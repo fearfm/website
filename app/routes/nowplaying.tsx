@@ -79,6 +79,7 @@ export default function Nowplaying() {
         tracklist: res.tracklist.title,
         image: res.track.image ?? defaultArtwork,
       });
+      document.title = `${res.track.artist} - ${res.track.title}`;
     });
     return () => {
       socket.off("nowplaying update");
