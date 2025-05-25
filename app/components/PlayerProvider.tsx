@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 import {createContext, type ReactNode, useState} from "react";
-import defaultImage from "~/assets/artwork-default-new.jpg";
+
 interface PlayerContextValue {
   playing: boolean;
   setPlaying: (playing: boolean) => void;
@@ -44,10 +44,6 @@ export default function PlayerProvider({children}: IProps) {
       playing={playing}
       volume={volume/100}
       muted={muted}
-      light={<img
-          alt="Now playing"
-          src={defaultImage}
-        />}
       config={{
         file: { forceAudio: true },
       }}
