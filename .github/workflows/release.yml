@@ -30,7 +30,7 @@ jobs:
           cleanup: true
 
       - name: Run remote SSH command
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: 116.203.246.165
           username: fearfm
