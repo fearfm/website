@@ -37,5 +37,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_FEARFM_APP_001 }}
           port: 22
           script: |
-            cd /var/hs40/app
+            cd /var/fearfm/website
             task update

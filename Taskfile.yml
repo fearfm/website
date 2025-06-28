@@ -1,0 +1,18 @@
+version: "3"
+
+env:
+  UID:
+    sh: id -u
+  GID:
+    sh: id -g
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  update:
+    desc: Update the application
+    cmds:
+      - git pull
+      - docker compose up -d --build
