@@ -1,0 +1,41 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: /
+    labels:
+      - "github-actions"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+
+  - package-ecosystem: "npm"
+    directory: /
+    labels:
+      - "pnpm"
+      - "dependency"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    ignore:
+      - dependency-name: "tailwindcss"
+        versions: [">3"]
+      - dependency-name: "tailwind-merge"
+        versions: [">2"]
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "@types/react"
+          - "react-dom"
+          - "@types/react-dom"
+      react-router:
+        patterns:
+          - "react-router"
+          - "react-router-dom"
+          - "@react-router/*"
+          - "@types/react-router"
+          - "@types/react-router-dom"
+      default:
+        patterns:
+          - "*"
